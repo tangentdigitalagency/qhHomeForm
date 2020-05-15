@@ -4,6 +4,7 @@
   "email": "contact@devias.io",
   "licence": "MIT",
   "version": "0.3.0",
+  "proxy": "http://localhost:5000",
   "private": false,
   "scripts": {
     "start": "react-scripts start",
