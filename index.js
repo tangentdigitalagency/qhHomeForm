@@ -8,6 +8,7 @@ app.use(express.urlencoded({extended: false}))
 
 require('./Routes/BusinessPage')(app)
 require('./Routes/UserRequests')(app)
+require('./Routes/ApproveRequest')(app)
 
 if (process.env.NODE_ENV === 'production') {
     app.use(express.static('client/build'));

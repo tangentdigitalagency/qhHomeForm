@@ -153,7 +153,8 @@ class AdminUserRequests extends React.Component {
                                     onClick={this.handleOpenModal}>Details</Button>
                 },*/
 
-      ]
+      ],
+      selectedRequest:{}
     };
 
   }
@@ -162,18 +163,32 @@ class AdminUserRequests extends React.Component {
     getUserRequests = () => {
       axios.get('/admin/UserRequests')
         .then(
-          res => {
-            this.setState({Orders: res.data})
-            console.log(res.data)
+          response => {
+            var newOrder = [];
+            response.data.map(order => {
+              order.detailButton = <Button style={{ fontFamily: "calibri", backgroundColor: "#dddddd" }}
+                onClick={this.handleOpenModal}>Details</Button>
+              newOrder.push(order)
+            })
+            this.setState({ Orders: newOrder })
           }
         )
         .catch(err => console.log(err))
     }
 
-    handleOpenModal = () => {
-      this.setState({ showModal: true });
-    }
 
+  approveRequest = () => {
+    axios.post('/admin/approveRequest', 'test')
+      .then(res => 'test')
+      .catch(err => console.log(err))
+  }
+
+    handleOpenModal = () => {
+      this.setState({
+        showModal: true,
+      });
+      this.approveRequest()
+    }
     handleCloseModal = () => {
       this.setState({ showModal: false });
     }
@@ -500,6 +515,7 @@ class AdminUserRequests extends React.Component {
                               backgroundColor: '#dddddd',
                               marginLeft: '75vh'
                             }}
+                            onClick={this.approveRequest}
                           > Approve</Button>
                         </Grid>
                         <Grid
@@ -511,6 +527,7 @@ class AdminUserRequests extends React.Component {
                               fontFamily: 'calibri',
                               backgroundColor: '#dddddd'
                             }}
+                            onClick={this.rejectRequest}
                           > Deny</Button>
                         </Grid>
                       </Grid>
