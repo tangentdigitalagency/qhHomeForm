@@ -1,0 +1,66 @@
+#box {
+    border: 2px solid #c9ffe4;
+    width: 99.6%;
+    height: 70vh;
+    background-color: #c9ffe4 !important;
+    
+    bottom: 0vh;
+  }
+  #boxSmall {
+    
+    border: 2px solid #c9ffe4;
+    width: 99.6%;
+    min-height: 70vh;
+    max-height: 200vh;
+    background-color: #c9ffe4 !important;
+    position: absolute;
+    top: 150vh;
+  }
+  /* For demo */
+  .ant-carousel .slick-slide {
+    text-align: center;
+    height: 160px;
+    line-height: 160px;
+    background: #364d79;
+    overflow: hidden;
+  }
+  button:focus { outline: none; }
+  .ant-carousel .slick-slide h3 {
+    color: #fff;
+  }
+  body {
+    overflow-x: hidden;
+  }
+  @media screen and (max-width:960px) {
+    #largeAppBar {
+      display: none;
+      visibility: hidden ;
+    }
+    #smallNavBar {
+      display: block;
+      visibility: visible;
+      z-index: 10000000;
+    }
+    #boxSmall {
+      display: block;
+    }
+    #box {
+      display: none;
+    }
+  }
+  @media screen and (min-width: 961px) {
+    #largeAppBar {
+      display: block;
+      visibility: visible;
+    }
+    #smallNavBar {
+      display: none;
+      visibility: hidden;
+    }
+    #boxSmall {
+      display: none;
+    }
+    #box {
+      display: block;
+    }
+  }
