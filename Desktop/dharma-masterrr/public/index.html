@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="theme-color" content="#000000" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Roboto+Mono|Roboto+Slab|Roboto:300,400,500,700"
+      rel="stylesheet"
+    />
+    <title>React Material Dashboard</title>
+  </head>
+  <style>
+    .PreloaderRoot {
+      background-color: rgb(255, 255, 255);
+      width: 100%;
+      min-height: 100%;
+      height: 100%;
+      pointer-events: none;
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      bottom: 0px;
+      left: 0px;
+      display: flex;
+      -webkit-box-align: center;
+      align-items: center;
+      -webkit-box-pack: center;
+      justify-content: center;
+      flex: 1 1 0%;
+    }
+    .PreloaderWrapper {
+      width: 80px;
+      height: 80px;
+      margin: auto;
+      position: relative;
+    }
+    .OuterBox {
+      width: 100%;
+      height: 100%;
+      background-color: rgb(255, 30, 194);
+      opacity: 0.6;
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      border-radius: 50%;
+      animation: 2s ease-in-out 0s infinite normal none running
+        preloaderAnimation;
+    }
+    .InnerBox {
+      width: 100%;
+      height: 100%;
+      background-color: rgb(255, 30, 194);
+      opacity: 0.6;
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      border-radius: 50%;
+      animation: 2s ease-in-out -1s infinite normal none running preloaderAnimation;
+    }
+
+    @-webkit-keyframes preloaderAnimation {
+      0%,
+      100% {
+        transform: scale(0);
+      }
+      50% {
+        transform: scale(1);
+      }
+    }
+  </style>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id="root">
+      <div class="PreloaderRoot">
+        <div class="PreloaderWrapper">
+          <div class="OuterBox"></div>
+          <div class="InnerBox"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
