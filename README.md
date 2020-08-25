@@ -1,29 +1,25 @@
 
 ### KNOWN ISSUES
 
-- Pressing Yes on Homeowner throws backend error that doesnt affect anything 
-- SEE TODO FOR MISSING ITEMS
-- SERVER LOAD TIME IS HUGE - MINIFY SCRIPTS OR CALLING
-
+- Pressing Yes on anything overrides it to No
+- Step "11" doesnt work 
+- Current insurance company brings up numbers
+- Cant scroll down on numbers for choosing 
 
 ### TO DO:
 
 - User Agent
 - Trusted Form URL
-- Lead ID Token
 
 
 ### Future Plans
 
 - Minify Scripts
-- Make Media alpha more "personal"
 - add URL PARAM after each question
-- Update CarQuery for 2020
-
 
 
 ### Netlify Server 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/6690166b-4070-4c28-98e6-22ca69d9d5bc/deploy-status)](https://app.netlify.com/sites/quotehoundauto/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/c12abb2a-af1e-4260-9351-11aad099682f/deploy-status)](https://app.netlify.com/sites/qhhomeform/deploys)
 
 ## Available Scripts
 
