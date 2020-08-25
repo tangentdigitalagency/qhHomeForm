@@ -1,10 +1,10 @@
 
 ### KNOWN ISSUES
 
-- Pressing Yes on anything overrides it to No
-- Step "11" doesnt work 
+- Pressing Yes on anything overrides it to No when clicking next
+- Step "11" doesnt work - dont know if we have a step 10
 - Current insurance company brings up numbers
-- Cant scroll down on numbers for choosing 
+- Cant scroll down on numbers for choosing on mobile
 
 ### TO DO:
 
