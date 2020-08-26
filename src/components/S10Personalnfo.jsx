@@ -9,7 +9,7 @@ class S10Personalnfo extends Component {
     }
 
     moveNext=()=>{
-        this.props.nextStep();
+        this.props.lastStep();
     }
 
     handleChangeCity = (value) => {
