@@ -53,7 +53,7 @@ class S2HomeType extends Component {
             <div className="card shadow-lg  " style={{ minHeight: "80vh" }}>
                 <CommonComponents currentStep={this.props.currentStep} totalSteps={this.props.totalSteps} previousStep={this.props.previousStep} />
                 <div className=" d-flex" style={{ minHeight: "70vh" }} >
-                    <div className="card-body  d-flex justify-content-center align-items-center" align="center">
+                    <div className="card-body  d-xl-flex justify-content-center align-items-center" align="center">
                         <Form className="mywidth" >
                             <Form.Item>
                                 <h3>Tell Me a Little Bit About Your Home Type</h3>
@@ -103,4 +103,3 @@ class S2HomeType extends Component {
 }
 
 export default S2HomeType;
-

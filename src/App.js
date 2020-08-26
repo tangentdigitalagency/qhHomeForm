@@ -14,8 +14,7 @@ import S6Personalnfo from "./components/S6Personalnfo";
 import S7Personalnfo from "./components/S7Personalnfo";
 import S8Personalnfo from "./components/S8Personalnfo";
 import S9Personalnfo from "./components/S9Personalnfo";
-import S10Personalnfo from "./components/S10Personalnfo";
-import S11ConformSubmission from './components/S11ConformSubmission';
+import S10Personalnfo from "./components/S10Personalnfo"; 
 class App extends Component {
 	state={
 		postData:{
@@ -26,7 +25,7 @@ class App extends Component {
 			houseSizeInSquareFeet:'',
 			insuredOrNot:false,
 			currentInsuranceCompany:'',
-			claimedAnything:0,
+			claimedAnything:'',
 			howMany:''
 		},
 		personalInfo:{
@@ -73,8 +72,7 @@ class App extends Component {
 													postData:{
 														ownOrRent:value
 													}
-												})
-												console.log(value);
+												}) 
 											}
 										} 
 									/> 
@@ -98,8 +96,7 @@ class App extends Component {
 													postData:{
 														typeOfProperty:type
 													}
-												});
-												console.log(type);
+												}); 
 											}
 										}
 									/>  
@@ -112,8 +109,7 @@ class App extends Component {
 													postData:{
 														houseSizeInSquareFeet:value
 													}
-												})
-												console.log(value);
+												}) 
 											}
 										}
 										setNumberOfStroies={
@@ -122,22 +118,20 @@ class App extends Component {
 													postData:{
 														numberOfStroies:value
 													}
-												})
-												console.log(value);
+												}) 
 											}
 										}
 									/>
 									<S4AboutInsurance
 										insuredOrNot={this.state.postData.insuredOrNot}
 										currentInsuranceCompany={this.state.postData.currentInsuranceCompany}
-										setinsuredOrNot={
+										setInsuredOrNot={
 											(value)=>{
 												this.setState({
 													postData:{
 														insuredOrNot:value
 													}
-												})
-												console.log(value);
+												}) 
 											}
 										}
 										setcurrentInsuranceCompany={
@@ -146,8 +140,7 @@ class App extends Component {
 													postData:{
 														currentInsuranceCompany:value
 													}
-												})
-												console.log(value);
+												}) 
 											}
 										}
 									/>
@@ -160,8 +153,7 @@ class App extends Component {
 													postData:{
 														claimedAnything:value
 													}
-												})
-												console.log(value);
+												}) 
 											}
 										}
 										sethowMany={
@@ -170,8 +162,7 @@ class App extends Component {
 													postData:{
 														howMany:value
 													}
-												})
-												console.log(value);
+												}) 
 											}
 										}
 									/> 
@@ -184,8 +175,7 @@ class App extends Component {
 													personalInfo:{
 														firstName:value
 													}
-												})
-												console.log(value);
+												}) 
 											}
 										}
 										setLastName={
@@ -194,8 +184,7 @@ class App extends Component {
 													personalInfo:{
 														lastName:value
 													}
-												})
-												console.log(value);
+												}) 
 											}
 										}
 									/>
@@ -208,8 +197,7 @@ class App extends Component {
 													personalInfo:{
 														phone:value 
 													}
-												})
-												console.log(value);
+												}) 
 											}
 										} 
 										setEmail={
@@ -218,8 +206,7 @@ class App extends Component {
 													personalInfo:{
 														email: value
 													}
-												})
-												console.log(value);
+												}) 
 											}
 										}
 									/>
@@ -232,8 +219,7 @@ class App extends Component {
 													personalInfo:{
 														dateOfBirth: value
 													}
-												})
-												console.log(value);
+												}) 
 											}
 										} 
 										setGender={
@@ -242,8 +228,7 @@ class App extends Component {
 													personalInfo:{
 														gender:value
 													}
-												})
-												console.log(value);
+												}) 
 											}
 										}
 									/>
@@ -256,8 +241,7 @@ class App extends Component {
 													personalInfo:{
 														zipCode:value
 													}
-												})
-												console.log(value);
+												}) 
 											}
 										}
 										setAddress={
@@ -266,8 +250,7 @@ class App extends Component {
 													personalInfo:{
 														address:value
 													}
-												})
-												console.log(value);
+												}) 
 											}
 										}
 									/>
@@ -280,8 +263,7 @@ class App extends Component {
 													personalInfo:{
 														city:value
 													}
-												})
-												console.log(value);
+												}) 
 											}
 										}
 										setCraditRating={
@@ -291,7 +273,6 @@ class App extends Component {
 														craditRating:value
 													}
 												})
-												console.log(value);
 											}
 										}
 									/>

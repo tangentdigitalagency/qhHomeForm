@@ -37,7 +37,7 @@ class S5ClaimedAnything extends Component {
             <div className="card shadow-lg" style={{minHeight:"80vh"}}>
                 <CommonComponents currentStep={this.props.currentStep} totalSteps={this.props.totalSteps} previousStep={this.props.previousStep} />
                 <div className="d-flex" style={{minHeight: "70vh"}}>
-                    <div className="card-body d-flex justify-content-center align-items-center" align="center" >
+                    <div className="card-body d-xl-flex justify-content-center align-items-center" align="center" >
                         <Form className="mywidth">
                             <Form.Item>
                                 <h3>
@@ -49,15 +49,13 @@ class S5ClaimedAnything extends Component {
                                 <div className="row d-flex justify-content-center align-items-center" align="center">
                                     
                                 <BootstrapSwitchButton
-                                        checked={false}
+                                        checked={this.props.claimedAnything}
                                         onlabel='Yes'
                                         onstyle='ant-btn ant-btn-primary'
                                         offlabel='No'
                                         offstyle='secondary'
                                         style='ant-btn-lg ant-btn-block mx-3 '
-                                        onChange={(checked: boolean) => {
-                                            this.setState({ isUserAdmin: checked })
-                                        }}
+                                        onChange={this.handleChangeClaimedAnything}
                                     /><br />
                                 </div>
                             </Form.Item>

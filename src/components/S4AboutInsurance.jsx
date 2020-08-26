@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import { Form, Select, Button } from 'antd';
 import CommonComponents from './CommonComponents'; 
-import BootstrapSwitchButton from 'bootstrap-switch-button-react'
-
+import BootstrapSwitchButton from 'bootstrap-switch-button-react' 
 const { Option } = Select;
 
 class S4AboutInsurance extends Component {
@@ -12,25 +11,46 @@ class S4AboutInsurance extends Component {
 
     CreateCompanyNameSelect = () => {
         let i = 0;
+        const companyName = [
+            "Company Not Listed",
+            "State Farm Insurance",
+            "21st Century Insurance",
+            "AAA Insurance Co.",
+            "AIG",
+            "AIU Insurance",
+            "Alfa",
+            "Allied",
+            "Allstate Insurance",
+            "Amco Ins Co",
+            "American Alliance Ins Co",
+            "American Automobile Insurance",
+            "American Direct Business Insurance", 
+            "American Economy Ins Co" ,
+            "American Empire Insurance",
+            "American Family Insurance ",
+            "American Financial ",
+            "American Home Assurance ",
+            "American Insurance ",
+            "Ins American International Ins ",
+            "American International Pacific",
+        ];
         const arr = [];
-        for (i = 500; i <= 5200; i += 100) {
+        for (i = 0; i < companyName.length ; i++) {
             arr.push(
-                <Option className="p-0 text-center" key={i} value={i}>
-                    {i}
+                <Option className="p-0 text-center" key={companyName[i]} value={companyName[i]}>
+                    {companyName[i]}
                 </Option>
             );
         }
         return arr;
     }
 
-
-
     moveNext = () => {
         this.props.nextStep();
     }
 
     handleChangeInsured = (value) => {
-        this.props.setinsuredOrNot(value);
+        this.props.setInsuredOrNot(value);
     }
     handleChangeCompany = (value) => {
         this.props.setcurrentInsuranceCompany(value);
@@ -40,8 +60,8 @@ class S4AboutInsurance extends Component {
         return (
             <div className="card shadow-lg" style={{ minHeight: "80vh" }}>
                 <CommonComponents currentStep={this.props.currentStep} totalSteps={this.props.totalSteps} previousStep={this.props.previousStep} />
-                <div className=" d-flex" style={{ minHeight: "70vh" }}>
-                    <div className=" card-body d-flex justify-content-center align-items-center" align="center">
+                <div className=" d-xl-flex d-sm-flex" style={{ minHeight: "70vh" }}>
+                    <div className=" card-body d-xl-flex justify-content-center align-items-center" align="center">
                         <Form className="mywidth">
                             <Form.Item>
                                 <h3>
@@ -54,15 +74,13 @@ class S4AboutInsurance extends Component {
                                 <div className="row d-flex justify-content-center align-items-center" align="center">
                                     
                                     <BootstrapSwitchButton
-                                        checked={false}
+                                        checked={this.props.insuredOrNot}
                                         onlabel='Yes'
                                         onstyle='ant-btn ant-btn-primary'
                                         offlabel='No'
                                         offstyle='secondary'
                                         style=' ant-btn-lg ant-btn-block mx-3 '
-                                        onChange={(checked: boolean) => {
-                                            this.setState({ isUserAdmin: checked })
-                                        }}
+                                        onChange={this.handleChangeInsured}
                                     /><br />
                                 </div>
                             </Form.Item>

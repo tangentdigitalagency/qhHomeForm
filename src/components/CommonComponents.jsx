@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { ArrowLeftOutlined } from '@ant-design/icons';
 import { Button } from 'antd';
 
-
 class CommonComponents extends Component {
     render() {
         return (
