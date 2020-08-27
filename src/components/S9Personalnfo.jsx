@@ -44,11 +44,11 @@ class S9Personalnfo extends Component {
                     message: "Please Enter Zip Code!",
                   },
                   {
-                    max: 6,
+                    max: 5,
                     message: "Max Length Of Zip Code is 6 characters",
                   },
                   {
-                    min: 6,
+                    min: 5,
                     message: "Min Length Of Zip Code is 6 characters",
                   },
                 ]}

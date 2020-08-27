@@ -335,7 +335,7 @@ class App extends Component {
 										onChange = {
 											(value, value1) => {
 												if (value !== "") {
-													this.handleChangeClaimedAnything(value);
+													this.handleChangeClaims(value);
 												} else if(value1 !== "") {
 													this.handleChangeHowMany(value1)
 												}
