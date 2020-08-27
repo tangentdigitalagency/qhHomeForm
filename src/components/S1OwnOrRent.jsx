@@ -1,49 +1,69 @@
-import React, { Component } from 'react';
-import { Form, Select, Button } from 'antd';
-import CommonComponents from './CommonComponents'; 
-const {Option} = Select;
+import React, { Component } from "react";
+import { Form, Select, Button, Input } from "antd";
+import CommonComponents from "./CommonComponents";
+const { Option } = Select;
+
 class S1OwnOrRent extends Component {
-    constructor(props) {
-        super(props);
-        this.state={
-            val:""
-        };
-    }
+  onFinish = (values) => {
+    this.props.nextStep();
+    console.log("Success:", values);
+  };
 
-    onFinish = () => {
-        this.props.nextStep()
-    }; 
-    render() {
-        return (
-            <div className="card shadow-lg  " style={{ minHeight: "80vh" }}>
-              <CommonComponents currentStep={this.props.currentStep} totalSteps={this.props.totalSteps} previousStep={this.props.previousStep} />
-                
-                <div className=" d-xl-flex d-sm-flex" style={{ minHeight: "70vh" }} > 
-                    <div className="card-body d-xl-flex justify-content-center align-items-center" align="center">
-                        <Form className="mywidth" onFinish={this.onFinish}>
-                            <h3>Do You Own Or Rent</h3><br />
-                            <Form.Item>
-                                <Select 
-                                    placeholder="Select An Option"  
-                                    onChange={(value)=>{this.props.onChange(value)}} 
-                                    size="large" 
-                                >
-                                    <Option value="i-own">I Own</Option>
-                                    <Option value="i-rent">I Rent</Option>
-                                </Select>
-                            </Form.Item>
+  onFinishFailed = (errorInfo) => {
+    console.log("Failed:", errorInfo);
+  };
+  render() {
+    return (
+      <div className="card shadow-lg  " style={{ minHeight: "80vh" }}>
+        <CommonComponents
+          currentStep={this.props.currentStep}
+          totalSteps={this.props.totalSteps}
+          previousStep={this.props.previousStep}
+        />
 
-                            <Form.Item >  
-                                <Button type="primary" htmlType="submit" block size="large">
-                                    Next
-                                </Button>
-                            </Form.Item>
-                        </Form>
-                    </div> 
-                </div>
-            </div>
-        );
-    }
+        <div className=" d-xl-flex d-sm-flex" style={{ minHeight: "70vh" }}>
+          <div
+            className="card-body d-xl-flex justify-content-center align-items-center"
+            align="center"
+          >
+            <Form
+              name="basic"
+              className="mywidth"
+              onFinish={this.onFinish}
+              onFinishFailed={this.onFinishFailed}
+            >
+              <h3>Do You Own Or Rent</h3>
+              <br />
+              <Form.Item
+                name="ownOrRent"
+                hasFeedback
+                rules={[
+                  {
+                    required: true,
+                    message: "Please Select An Option!",
+                  },
+                ]}
+              >
+                <Select
+                  placeholder="Select An Option"
+                  onChange={(value) => this.props.onChange(value)}
+                  size="large"
+                >
+                  <Option value="i-own">I Own</Option>
+                  <Option value="i-rent">I Rent</Option>
+                </Select>
+              </Form.Item>
+              <Form.Item>
+                <Button type="primary" htmlType="submit" block size="large">
+                  Next
+                </Button>
+              </Form.Item>
+            </Form>
+          </div>
+        </div>
+      </div>
+    );
+  }
 }
 
 export default S1OwnOrRent;

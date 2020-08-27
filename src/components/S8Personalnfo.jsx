@@ -12,8 +12,8 @@ class S8Personalnfo extends Component {
       <Space className="w-100 text-center" direction="vertical" size={12}>
         <DatePicker
           onChange={(date, dateString) => {
-            console.log( dateString);
-            this.props.onChange(dateString,"")
+            console.log(dateString);
+            this.props.onChange(dateString, "");
           }}
           className="w-100 text-center"
           align="center"
@@ -25,8 +25,13 @@ class S8Personalnfo extends Component {
     );
   };
 
-  moveNext = () => {
+  onFinish = (values) => {
     this.props.nextStep();
+    console.log("Success:", values);
+  };
+
+  onFinishFailed = (errorInfo) => {
+    console.log("Failed:", errorInfo);
   };
 
   render() {
@@ -42,15 +47,31 @@ class S8Personalnfo extends Component {
             className="card-body d-xl-flex justify-content-center align-items-center"
             align="center"
           >
-            <Form className="mywidth">
-              <Form.Item>
-                <h3>Personal Info</h3>
+            <Form
+              name="basic"
+              className="mywidth"
+              onFinish={this.onFinish}
+              onFinishFailed={this.onFinishFailed}
+            >
+              <h3>Personal Info</h3>
                 <br />
                 <h5>Date Of Birth</h5>
+              <Form.Item
+                 >
+                
                 {this.CreateDateOfBirthSelect()}
               </Form.Item>
-              <Form.Item>
-                <h5>Gender</h5>
+              <h5>Gender</h5>
+              <Form.Item
+                name="Gender"
+                hasFeedback
+                rules={[
+                  {
+                    required: true,
+                    message: "Please Select An Option!",
+                  },
+                ]}>
+                
 
                 <Select
                   onChange={(value) => {
@@ -65,10 +86,7 @@ class S8Personalnfo extends Component {
                 </Select>
               </Form.Item>
               <Form.Item>
-                <Button
-                  onClick={() => {
-                    this.moveNext();
-                  }}
+                <Button 
                   type="primary"
                   htmlType="submit"
                   block

@@ -18,16 +18,15 @@ import S10Personalnfo from "./components/S10Personalnfo";
 class App extends Component {
 	state={
 		postData:{
-			//extra entries
-			Key:"",
+			//extra entries 
 			TYPE:"34",
 			Test_Lead:1,
 			Skip_XSL:1,
 			Match_With_Partner_ID:22456,
 			Redirect_URL:'',
 			Referral_URL:'',
-			Litigator:'',
-			Age_In_Seconds:'',
+			Litigator:'Yes',
+			Age_In_Seconds:5,
 			deliveryResponse:'',
 			SRC:'',
 			Landing_Page:'',
@@ -38,7 +37,7 @@ class App extends Component {
 			Unique_Identifier:'',
 			Time_On_Page:12,
 			Trusted_Form_URL:'',
-			TCPA_Consent:'',
+			TCPA_Consent:'Yes',
 			TCPA_Language:'',
 			LeadiD_Token:'',
 			First_Name:'',
@@ -86,14 +85,8 @@ class App extends Component {
 			Years_At_Current_Residence:'',
 			Years_At_Previous_Residence:'',
 
-			ownOrRent:"",
-			houseBuiltYear:"",
-			typeOfProperty:"",
-			numberOfStroies:"",
-			houseSizeInSquareFeet:'',
-			insuredOrNot:false,
-			currentInsuranceCompany:'',
-			claimedAnything:'',
+			ownOrRent:"", 
+			houseSizeInSquareFeet:'', 
 			howMany:''
 		},
 		// personalInfo:{
@@ -128,7 +121,7 @@ class App extends Component {
 		this.setState({ 
 			postData: {
 				...this.state.postData, 
-				houseBuiltYear: value
+				Year_Built: value
 			}
 		});
 	}
@@ -137,7 +130,7 @@ class App extends Component {
     	this.setState({ 
     		postData: { 
 				...this.state.postData,
-    			typeOfProperty: value
+    			Property_Type: value
     		}
     	});
     }
@@ -154,7 +147,7 @@ class App extends Component {
 		this.setState({ 
     		postData: { 
 				...this.state.postData,
-    			numberOfStroies: value
+    			Stories: value
     		}
     	});
 	}
@@ -162,7 +155,7 @@ class App extends Component {
 		this.setState({ 
     		postData: { 
 				...this.state.postData,
-    			insuredOrNot: value
+    			Currently_insured: value
     		}
     	});
     }
@@ -170,16 +163,16 @@ class App extends Component {
 		this.setState({ 
     		postData: { 
 				...this.state.postData,
-    			currentInsuranceCompany: value
+    			Current_Insurance_Company: value
     		}
     	});
 	}
 	
-	handleChangeClaimedAnything = (value) => { 
+	handleChangeClaims = (value) => { 
 		this.setState({ 
     		postData: { 
 				...this.state.postData,
-    			claimedAnything: value
+    			Claims: value
     		}
     	});
     }
@@ -297,8 +290,8 @@ class App extends Component {
 										onChange={(value)=>{this.handleChange(value)}}
 									/> 
 									<S2HomeType
-										houseBuiltYear={this.state.postData.houseBuiltYear}
-										typeOfProperty={this.state.postData.typeOfProperty}
+										Year_Built={this.state.postData.Year_Built}
+										Property_Type={this.state.postData.Property_Type}
 										onChange = {
 											(value, value1) => {
 												if (value !== "") {
@@ -311,7 +304,7 @@ class App extends Component {
 									/>  
 									<S3HouseSize
 										houseSizeInSquareFeet={this.state.postData.houseSizeInSquareFeet}
-										numberOfStroies={this.state.postData.numberOfStroies}
+										Stories={this.state.postData.Stories}
 										onChange = {
 											(value, value1) => {
 												if (value !== "") {
@@ -324,8 +317,8 @@ class App extends Component {
 										 
 									/>
 									<S4AboutInsurance
-										insuredOrNot={this.state.postData.insuredOrNot}
-										currentInsuranceCompany={this.state.postData.currentInsuranceCompany}
+										Currently_insured={this.state.postData.Currently_insured}
+										Current_Insurance_Company={this.state.postData.Current_Insurance_Company}
 										onChange = {
 											(value, value1) => {
 												if (value !== "") {
