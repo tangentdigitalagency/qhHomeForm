@@ -25,7 +25,7 @@ class App extends Component {
 			Skip_XSL:1,
 			Match_With_Partner_ID:22456,
 			Redirect_URL:'',
-			Referral_URL,
+			Referral_URL:'',
 			Litigator:'',
 			Age_In_Seconds:'',
 			deliveryResponse:'',
@@ -96,18 +96,18 @@ class App extends Component {
 			claimedAnything:'',
 			howMany:''
 		},
-		personalInfo:{
-			firstName:'',
-			lastName:'',
-			phone:'',
-			email:'',
-			address:'',
-			zipCode:'',
-			city:'',
-			dateOfBirth:'',
-			gender:'',
-			craditRating:''
-		}
+		// personalInfo:{
+		// 	First_Name:'',
+		// 	Last_Name:'',
+		// 	Primary_Phone:'',
+		// 	Email:'',
+		// 	Address:'',
+		// 	Zip:'',
+		// 	City:'',
+		// 	DOB:'',
+		// 	Gender:'',
+		// 	Credit:''
+		// }
 
 	}
 
@@ -116,8 +116,7 @@ class App extends Component {
 	};
 
 	handleChange = (value) => {
-		this.setState({
-			...this.state,
+		this.setState({ 
 			postData: {
 				...this.state.postData,
 				ownOrRent: value
@@ -126,8 +125,7 @@ class App extends Component {
 	};
 
 	handleChangeYear = (value) => {
-		this.setState({
-			...this.state,
+		this.setState({ 
 			postData: {
 				...this.state.postData, 
 				houseBuiltYear: value
@@ -136,8 +134,7 @@ class App extends Component {
 	}
 
     handleChangeType = (value) => {
-    	this.setState({
-			...this.state,
+    	this.setState({ 
     		postData: { 
 				...this.state.postData,
     			typeOfProperty: value
@@ -146,8 +143,7 @@ class App extends Component {
     }
 	
 	handleChangeSize = (value) => { 
-		this.setState({
-			...this.state,
+		this.setState({ 
     		postData: { 
 				...this.state.postData,
     			houseSizeInSquareFeet: value
@@ -155,8 +151,7 @@ class App extends Component {
     	});
     }
     handleChangeStories = (value) => { 
-		this.setState({
-			...this.state,
+		this.setState({ 
     		postData: { 
 				...this.state.postData,
     			numberOfStroies: value
@@ -164,8 +159,7 @@ class App extends Component {
     	});
 	}
 	handleChangeInsured = (value) => { 
-		this.setState({
-			...this.state,
+		this.setState({ 
     		postData: { 
 				...this.state.postData,
     			insuredOrNot: value
@@ -173,8 +167,7 @@ class App extends Component {
     	});
     }
     handleChangeCompany = (value) => { 
-		this.setState({
-			...this.state,
+		this.setState({ 
     		postData: { 
 				...this.state.postData,
     			currentInsuranceCompany: value
@@ -183,8 +176,7 @@ class App extends Component {
 	}
 	
 	handleChangeClaimedAnything = (value) => { 
-		this.setState({
-			...this.state,
+		this.setState({ 
     		postData: { 
 				...this.state.postData,
     			claimedAnything: value
@@ -192,8 +184,7 @@ class App extends Component {
     	});
     }
     handleChangeHowMany = (value) => { 
-		this.setState({
-			...this.state,
+		this.setState({ 
     		postData: { 
 				...this.state.postData,
     			howMany: value
@@ -201,97 +192,87 @@ class App extends Component {
     	});
 	}
 	
-	handleChangeFirstName = (e) => { 
-		this.setState({
-			...this.state,
-    		personalInfo: {
-				...this.state.personalInfo, 
-    			firstName: e.target.value
+	handleChangeFirst_Name = (e) => { 
+		this.setState({ 
+    		postData: {
+				...this.state.postData, 
+    			First_Name: e.target.value
     		}
     	});
     }
-    handleChangeLastName = (e) => { 
-		this.setState({
-			...this.state,
-    		personalInfo: { 
-				...this.state.personalInfo,
-    			lastName: e.target.value
+    handleChangeLast_Name = (e) => { 
+		this.setState({ 
+    		postData: { 
+				...this.state.postData,
+    			Last_Name: e.target.value
     		}
     	});
 	}
 	
-	handleChangePhone = (e) => { 
-		this.setState({
-			...this.state,
-    		personalInfo: { 
-				...this.state.personalInfo,
-    			phone: e.target.value
+	handleChangePrimary_Phone = (e) => { 
+		this.setState({ 
+    		postData: { 
+				...this.state.postData,
+    			Primary_Phone: e.target.value
     		}
     	});
     }
     handleChangeEmail = (e) => { 
-		this.setState({
-			...this.state,
-    		personalInfo: { 
-				...this.state.personalInfo,
-    			email: e.target.value
+		this.setState({ 
+    		postData: { 
+				...this.state.postData,
+    			Email: e.target.value
     		}
     	});
 	}
 	
 	handleChangeDOB = (value) => { 
-		this.setState({
-			...this.state,
-    		personalInfo: { 
-				...this.state.personalInfo,
-    			dateOfBirth:value
+		this.setState({ 
+    		postData: { 
+				...this.state.postData,
+    			DOB:value
     		}
     	});
     }
     handleChangeGender = (value) => { 
 		
-		this.setState({
-			...this.state,
-    		personalInfo: {
-				...this.state.personalInfo, 
-    			gender: value
+		this.setState({ 
+    		postData: {
+				...this.state.postData, 
+    			Gender: value
     		}
     	});
 	}
 	
-	handleChangeZipCode = (e) => { 
-		this.setState({
-			...this.state,
-    		personalInfo: { 
-				...this.state.personalInfo,
-    			zipCode: e.target.value
+	handleChangeZip = (e) => { 
+		this.setState({ 
+    		postData: { 
+				...this.state.postData,
+    			Zip: e.target.value
     		}
     	});
     }
     handleChangeAddress = (e) => { 
-		this.setState({
-			...this.state,
-    		personalInfo: { 
-				...this.state.personalInfo,
-    			address: e.target.value
+		this.setState({ 
+    		postData: { 
+				...this.state.postData,
+    			Address: e.target.value
     		}
     	});
     }
 	handleChangeCity = (e) => { 
-		this.setState({
-			...this.state,
-    		personalInfo: { 
-				...this.state.personalInfo,
-    			city: e.target.value
+		this.setState({ 
+    		postData: { 
+				...this.state.postData,
+    			City: e.target.value
     		}
     	});
     }
-    handleChangeCraditRating = (value) => { 
-		this.setState({
-			...this.state,
-    		personalInfo: { 
-				...this.state.personalInfo,
-    			craditRating: value
+    handleChangeCredit = (value) => { 
+		this.setState({ 
+    		postData: { 
+				...this.state.postData,
+    			Credit: value
     		}
     	});
     }
@@ -369,25 +350,25 @@ class App extends Component {
 										} 
 									/> 
 									<S6Personalnfo 
-										firstName={this.state.personalInfo.firstName}
-										lastName={this.state.personalInfo.lastName}
+										First_Name={this.state.postData.First_Name}
+										Last_Name={this.state.postData.Last_Name}
 										onChange = {
 											(e, e1) => {
 												if (e !== "") {
-													this.handleChangeFirstName(e);
+													this.handleChangeFirst_Name(e);
 												} else if(e1 !== "") {
-													this.handleChangeLastName(e1)
+													this.handleChangeLast_Name(e1)
 												}
 											}
 										} 
 									/>
 									<S7Personalnfo 
-										phone={this.state.personalInfo.phone}
-										email={this.state.personalInfo.email}
+										Primary_Phone={this.state.postData.Primary_Phone}
+										Email={this.state.postData.Email}
 										onChange = {
 											(e, e1) => {
 												if (e !== "") {
-													this.handleChangePhone(e);
+													this.handleChangePrimary_Phone(e);
 												} else if(e1 !== "") {
 													this.handleChangeEmail(e1)
 												}
@@ -395,8 +376,8 @@ class App extends Component {
 										} 
 									/>
 									<S8Personalnfo 
-										dateOfBirth={this.state.personalInfo.dateOfBirth}
-										gender={this.state.personalInfo.gender}
+										DOB={this.state.postData.DOB}
+										Gender={this.state.postData.Gender}
 										onChange = {
 											(value, value1) => {
 												if (value !== "") {
@@ -408,12 +389,12 @@ class App extends Component {
 										}  
 									/>
 									<S9Personalnfo 
-										zipCode={this.state.postData.zipCode}
-										address={this.state.postData.address}
+										Zip={this.state.postData.Zip}
+										Address={this.state.postData.Address}
 										onChange = {
 											(e, e1) => {
 												if (e !== "") {
-													this.handleChangeZipCode(e);
+													this.handleChangeZip(e);
 												} else if(e1 !== "") {
 													this.handleChangeAddress(e1)
 												}
@@ -421,14 +402,14 @@ class App extends Component {
 										}  
 									/>
 									<S10Personalnfo 
-										city={this.state.personalInfo.city}
-										craditRating={this.state.personalInfo.craditRating}
+										City={this.state.postData.City}
+										Credit={this.state.postData.Credit}
 										onChange = {
 											(e, value1) => {
 												if (e !== "") {
 													this.handleChangeCity(e);
 												} else if(value1 !== "") {
-													this.handleChangeCraditRating(value1)
+													this.handleChangeCredit(value1)
 												}
 											}
 										}
