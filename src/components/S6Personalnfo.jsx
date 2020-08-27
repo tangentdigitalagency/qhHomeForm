@@ -11,12 +11,7 @@ class S6Personalnfo extends Component {
         this.props.nextStep();
     }
 
-    handleChangeFirstName = (value) => {
-        this.props.setFirstName(value);
-    }
-    handleChangeLastName = (value) => {
-        this.props.setLastName(value);
-    }
+
 
     render() {
         return (
@@ -32,14 +27,14 @@ class S6Personalnfo extends Component {
                                 <h5>
                                     First Name
                                 </h5>  
-                                <Input onChange={this.handleChangeFirstName} size="large" placeholder="First Name" /> 
+                                <Input onChange={(e)=>{this.props.onChange(e,"")}} size="large" placeholder="First Name" /> 
                             </Form.Item>
                             <Form.Item>
                                 <h5>
                                     Last Name       
                                 </h5>
                                 
-                                <Input onChange={this.handleChangeLastName} size="large" placeholder="Last Name"  />
+                                <Input onChange={(e)=>{this.props.onChange("",e)}} size="large" placeholder="Last Name"  />
                             </Form.Item>
                             <Form.Item>
                                     <Button onClick={()=>{this.moveNext()}} type="primary" htmlType="submit" block size="large">

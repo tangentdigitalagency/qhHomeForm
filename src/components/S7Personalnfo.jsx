@@ -11,12 +11,7 @@ class S7Personalnfo extends Component {
         this.props.nextStep();
     }
 
-    handleChangePhone = (value) => {
-        this.props.setPhone(value);
-    }
-    handleChangeEmail = (value) => {
-        this.props.setEmail(value);
-    }
+  
 
     render() {
         return (
@@ -32,14 +27,14 @@ class S7Personalnfo extends Component {
                                 <h5>
                                     Phone Number
                                 </h5>  
-                                <Input onChange={this.handleChangePhone} size="large" placeholder="123-456-7890" /> 
+                                <Input onChange={(value)=>{this.props.onChange(value,"")}} size="large" placeholder="123-456-7890" /> 
                             </Form.Item>
                             <Form.Item>
                                 <h5>
                                     Email       
                                 </h5>
                                 
-                                <Input onChange={this.handleChangeEmail} size="large" placeholder="abc@email.com"  />
+                                <Input onChange={(value)=>{this.props.onChange("",value)}} size="large" placeholder="abc@email.com"  />
                             </Form.Item>
                             <Form.Item>
                                     <Button onClick={()=>{this.moveNext()}} type="primary" htmlType="submit" block size="large">

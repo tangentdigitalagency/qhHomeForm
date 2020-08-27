@@ -40,13 +40,7 @@ class S2HomeType extends Component {
         this.props.nextStep();
     };
 
-    handleChangeYear = (year) => {
-        this.props.setHouseBuiltYear(year);
-    }
-
-    handleChangeType = (type) => {
-        this.props.setTypeOfProperty(type);
-    }
+    
 
     render() {
         return (
@@ -62,7 +56,7 @@ class S2HomeType extends Component {
                                 <Select
                                     size="large"
                                     placeholder="House Built Years"
-                                    onChange={this.handleChangeYear}
+                                    onChange={(value)=>{this.props.onChange(value,"")}}
                                     optionFilterProp="children"
                                     filterOption={(input, option) =>
                                         option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
@@ -79,7 +73,7 @@ class S2HomeType extends Component {
                                 <Select
                                     size="large"
                                     placeholder="Property Type"
-                                    onChange={this.handleChangeType}
+                                    onChange={(value1)=>this.props.onChange("",value1)}
                                     optionFilterProp="children"
                                     filterOption={(input, option) =>
                                         option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0

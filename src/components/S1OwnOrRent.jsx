@@ -12,12 +12,7 @@ class S1OwnOrRent extends Component {
 
     onFinish = () => {
         this.props.nextStep()
-    };
-
-    handleChange=(value)=>{ 
-        this.props.setOwnOrRent(value); 
-    }
-
+    }; 
     render() {
         return (
             <div className="card shadow-lg  " style={{ minHeight: "80vh" }}>
@@ -30,7 +25,7 @@ class S1OwnOrRent extends Component {
                             <Form.Item>
                                 <Select 
                                     placeholder="Select An Option"  
-                                    onChange={this.handleChange} 
+                                    onChange={(value)=>{this.props.onChange(value)}} 
                                     size="large" 
                                 >
                                     <Option value="i-own">I Own</Option>

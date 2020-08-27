@@ -49,12 +49,7 @@ class S4AboutInsurance extends Component {
         this.props.nextStep();
     }
 
-    handleChangeInsured = (value) => {
-        this.props.setInsuredOrNot(value);
-    }
-    handleChangeCompany = (value) => {
-        this.props.setcurrentInsuranceCompany(value);
-    }
+
 
     render() {
         return (
@@ -80,7 +75,7 @@ class S4AboutInsurance extends Component {
                                         offlabel='No'
                                         offstyle='secondary'
                                         style=' ant-btn-lg ant-btn-block mx-3 '
-                                        onChange={this.handleChangeInsured}
+                                        onChange={(value)=>{this.props.onChange(value,"")}}
                                     /><br />
                                 </div>
                             </Form.Item>
@@ -91,7 +86,7 @@ class S4AboutInsurance extends Component {
                                 <Select
                                     size="large"
                                     placeholder="Company Not Listed"
-                                    onChange={this.handleChangeCompany}
+                                    onChange={(value)=>{this.props.onChange("",value)}}
                                     optionFilterProp="children"
                                     filterOption={(input, option) =>
                                         option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0

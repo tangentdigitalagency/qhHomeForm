@@ -25,12 +25,7 @@ class S5ClaimedAnything extends Component {
         this.props.nextStep();
     }
 
-    handleChangeClaimedAnything = (value) => {
-        this.props.setclaimedAnything(value);
-    }
-    handleChangeHowMany = (value) => {
-        this.props.sethowMany(value);
-    }
+ 
     
     render() {
         return (
@@ -55,7 +50,7 @@ class S5ClaimedAnything extends Component {
                                         offlabel='No'
                                         offstyle='secondary'
                                         style='ant-btn-lg ant-btn-block mx-3 '
-                                        onChange={this.handleChangeClaimedAnything}
+                                        onChange={(value)=>{this.props.onChange(value,"")}}
                                     /><br />
                                 </div>
                             </Form.Item>
@@ -66,7 +61,7 @@ class S5ClaimedAnything extends Component {
                                 <Select 
                                     size="large"
                                     placeholder="Select An Option"
-                                    onChange={this.handleChangeHowMany}
+                                    onChange={(value)=>{this.props.onChange("",value)}}
                                     optionFilterProp="children"
                                     filterOption={ (input,option) => option.children.toLowerCase.indexOf(input.toLowerCase()) >= 0
                                     }

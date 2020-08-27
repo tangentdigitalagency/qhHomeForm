@@ -35,12 +35,7 @@ class S3HouseSize extends Component {
     moveNext=()=>{
         this.props.nextStep();
     }
-    handleChangeSize = (value) => {
-        this.props.setHouseSizeInSquareFeet(value);
-    }
-    handleChangeStories = (value) => {
-        this.props.setNumberOfStroies(value);
-    }
+  
 
     render() {
         return (
@@ -60,7 +55,7 @@ class S3HouseSize extends Component {
                                 <Select 
                                     size="large"
                                     placeholder="Number Of Stories"
-                                    onChange={this.handleChangeStories}
+                                    onChange={(value)=>{this.props.onChange(value,"")}}
                                     optionFilterProp="children"
                                     filterOption={(input, option) =>
                                         option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0
@@ -77,7 +72,7 @@ class S3HouseSize extends Component {
                                 <Select 
                                     size="large"
                                     placeholder="House Size"
-                                    onChange={this.handleChangeSize}
+                                    onChange={(value)=>{this.props.onChange("",value)}}
                                     optionFilterProp="children"
                                     filterOption={(input, option) =>
                                         option.children.toLowerCase().indexOf(input.toLowerCase()) >= 0

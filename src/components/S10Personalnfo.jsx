@@ -9,15 +9,10 @@ class S10Personalnfo extends Component {
     }
 
     moveNext=()=>{
-        this.props.nextStep();
+        this.props.lastStep();
     }
 
-    handleChangeCity = (value) => {
-        this.props.setCity(value);
-    }
-    handleChangeCraditRating = (value) => {
-        this.props.setCraditRating(value);
-    }
+   
 
     render() {
         return (
@@ -36,13 +31,13 @@ class S10Personalnfo extends Component {
                                 <h5>
                                     City
                                 </h5>  
-                                <Input onChange={this.handleChangeCity} size="large" placeholder="City" /> 
+                                <Input onChange={(value)=>{this.props.onChange(value,"")}} size="large" placeholder="City" /> 
                             </Form.Item>
                             <Form.Item>
                                 <h5>
                                     Credit Rating       
                                 </h5>
-                                <Select onChange={this.handleChangeCraditRating} size="large" placeholder="Credit Rating">
+                                <Select onChange={(value)=>{this.props.onChange("",value)}} size="large" placeholder="Credit Rating">
                                     <Option value="average" >Average</Option>
                                     <Option value="poor" >Poor</Option>
                                     <Option value="Good" >Good</Option>
@@ -65,7 +60,7 @@ class S10Personalnfo extends Component {
                                 </p>
                             </Form.Item>
                             <Form.Item >
-                                <Button onClick={() => { this.moveNext() }} type="primary" htmlType="submit" block size="large">
+                                <Button onClick={() => { this.props.onClick() }} type="primary" htmlType="submit" block size="large">
                                     Get My Quote!
                                 </Button>
                             </Form.Item>
