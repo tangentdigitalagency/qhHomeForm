@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Form, Select, Button } from "antd";
 import CommonComponents from "./CommonComponents";
 import BootstrapSwitchButton from "bootstrap-switch-button-react";
+import CompanyNameList from "../CompanyNameList";
 const { Option } = Select;
 
 class S4AboutInsurance extends Component {
@@ -9,29 +10,7 @@ class S4AboutInsurance extends Component {
 
   CreateCompanyNameSelect = () => {
     let i = 0;
-    const companyName = [
-      "Company Not Listed",
-      "State Farm Insurance",
-      "21st Century Insurance",
-      "AAA Insurance Co.",
-      "AIG",
-      "AIU Insurance",
-      "Alfa",
-      "Allied",
-      "Allstate Insurance",
-      "Amco Ins Co",
-      "American Alliance Ins Co",
-      "American Automobile Insurance",
-      "American Direct Business Insurance",
-      "American Economy Ins Co",
-      "American Empire Insurance",
-      "American Family Insurance ",
-      "American Financial ",
-      "American Home Assurance ",
-      "American Insurance ",
-      "Ins American International Ins ",
-      "American International Pacific",
-    ];
+   const companyName = CompanyNameList;
     const arr = [];
     for (i = 0; i < companyName.length; i++) {
       arr.push(
@@ -80,14 +59,14 @@ class S4AboutInsurance extends Component {
               <h5>Are You Currently Insured?</h5>
               <Form.Item>
                 <BootstrapSwitchButton
-                  checked={this.props.insuredOrNot}
+                  checked={this.props.Currently_insured}
                   onlabel="Yes"
                   onstyle="ant-btn ant-btn-primary"
                   offlabel="No"
                   offstyle="secondary"
                   style=" ant-btn-lg ant-btn-block"
                   onChange={(value) => {
-                    this.props.onChange(value, "");
+                    this.props.onChange(value?'Yes':'No', "");
                   }}
                 />
               </Form.Item>

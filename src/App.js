@@ -20,26 +20,28 @@ class App extends Component {
 		postData:{
 			//extra entries 
 			TYPE:"34",
-			Test_Lead:1,
-			Skip_XSL:1,
-			Match_With_Partner_ID:22456,
-			Redirect_URL:'',
-			Referral_URL:'',
-			Litigator:'Yes',
-			Age_In_Seconds:5,
-			deliveryResponse:'',
-			SRC:'',
-			Landing_Page:'',
+			//Test_Lead:1,
+			//Skip_XSL:1,
+			//Match_With_Partner_ID:"",
+			//Redirect_URL:'',
+			//Referral_URL:'',
+			//Litigator:'Yes',
+			//Age_In_Seconds:5,
+			//deliveryResponse:'',
+			SRC:'quotehound.com',
+			Landing_Page:'quotehound.com',
 			IP_Address:'',
-			Sub_ID:13,
-			Pub_ID:12,
-			Optout:'',
-			Unique_Identifier:'',
-			Time_On_Page:12,
-			Trusted_Form_URL:'',
+			Sub_ID:101,
+			Pub_ID:101,
+			//Optout:'',
+			//Unique_Identifier:'',
+			//Time_On_Page:12,
+			//Trusted_Form_URL:'',
 			TCPA_Consent:'Yes',
-			TCPA_Language:'',
+			//TCPA_Language:'',
 			LeadiD_Token:'',
+			
+			//form id
 			First_Name:'',
 			Last_Name:'',
 			Address:'',
@@ -47,60 +49,47 @@ class App extends Component {
 			State:'',
 			Zip:'',
 			Primary_Phone:'',
-			Alternate_Phone:'',
+			//Alternate_Phone:'',
 			Email:'',
-			Total_Premium:'',
-			Sold_Tier:'',
-			Quoted_Carrrier:'',
-			Age:'',
+			//Total_Premium:'',
+			//Sold_Tier:'',
+			//Quoted_Carrrier:'',
+			//Age:'',
 			DOB:'',
 			Gender:'',
 			Currently_insured:'',
-			Insured_Since:'',
-			Policy_Expiration:'',
+			//Insured_Since:'',
+			//Policy_Expiration:'',
 			Current_Insurance_Company:'',
 			Property_Type:'',
-			Occupancy:'',
-			Garage:'',
-			Foundation:'',
-			Home_Security:'',
+			Occupancy:'Primary Residence',
+			Garage:'unknown',
+			Foundation:'unknown',
+			Home_Security:'unknown',
 			Year_Built:'',
 			Stories:'',
-			Bedrooms:'',
-			Bathrooms:'',
+			Bedrooms:4,
+			Bathrooms:3,
 			Square_Footage:'',
-			Home_Value:'',
-			Construction_Type:'',
-			Roof_Type:'',
-			Exterior_Walls:'',
-			Heating_type:'',
-			Smoke_Alarm:'',
-			Indoor_Sprinklers:'',
-			Central_Air_Conditioning:'',
+			Home_Value:15000,
+			Construction_Type:'unknown',
+			Roof_Type:'unknown',
+			//Exterior_Walls:'',
+			Heating_type:'other',
+			//Smoke_Alarm:'',
+			//Indoor_Sprinklers:'',
+			//Central_Air_Conditioning:'',
 			Claims:"",
-			Coverage_Type:'',
-			Liability:'',
-			Deductible:'',
+			Coverage_Type:'unknown',
+			Liability:100000,
+			Deductible:100,
 			Credit:'',
-			Years_At_Current_Residence:'',
-			Years_At_Previous_Residence:'',
-
+			//Years_At_Current_Residence:'',
+			//Years_At_Previous_Residence:'',
+			//???
 			ownOrRent:"", 
-			houseSizeInSquareFeet:'', 
 			howMany:''
-		},
-		// personalInfo:{
-		// 	First_Name:'',
-		// 	Last_Name:'',
-		// 	Primary_Phone:'',
-		// 	Email:'',
-		// 	Address:'',
-		// 	Zip:'',
-		// 	City:'',
-		// 	DOB:'',
-		// 	Gender:'',
-		// 	Credit:''
-		// }
+		}
 
 	}
 
@@ -139,7 +128,7 @@ class App extends Component {
 		this.setState({ 
     		postData: { 
 				...this.state.postData,
-    			houseSizeInSquareFeet: value
+    			Square_Footage: value
     		}
     	});
     }
@@ -303,7 +292,7 @@ class App extends Component {
 										}
 									/>  
 									<S3HouseSize
-										houseSizeInSquareFeet={this.state.postData.houseSizeInSquareFeet}
+										Square_Footage={this.state.postData.Square_Footage}
 										Stories={this.state.postData.Stories}
 										onChange = {
 											(value, value1) => {
