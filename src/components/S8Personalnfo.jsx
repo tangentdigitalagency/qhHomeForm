@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import moment from "moment";
 import { Form, Button, Select, DatePicker, Space } from "antd";
 import CommonComponents from "./CommonComponents";
-const dateFormat = "MM/DD/YYYY";
+const dateFormat = "DD/MM/YYYY";
 const { Option } = Select;
 class S8Personalnfo extends Component {
   state = {};
@@ -36,13 +36,13 @@ class S8Personalnfo extends Component {
 
   render() {
     return (
-      <div className="card shadow-lg" style={{ minHeight: "80vh" }}>
+      <div className="card shadow-lg" style={{ borderRadius: "25px"}}>
         <CommonComponents
           currentStep={this.props.currentStep}
           totalSteps={this.props.totalSteps}
           previousStep={this.props.previousStep}
         />
-        <div className="d-flex" style={{ minHeight: "70vh" }}>
+        <div className="d-flex" style={{ minHeight: "50vh" }}>
           <div
             className="card-body d-xl-flex justify-content-center align-items-center"
             align="center"

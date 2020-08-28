@@ -14,14 +14,14 @@ class S1OwnOrRent extends Component {
   };
   render() {
     return (
-      <div className="card shadow-lg  " style={{ minHeight: "80vh" }}>
+      <div className="card shadow-lg" style={{ borderRadius: "25px" }}>
         <CommonComponents
           currentStep={this.props.currentStep}
           totalSteps={this.props.totalSteps}
           previousStep={this.props.previousStep}
         />
 
-        <div className=" d-xl-flex d-sm-flex" style={{ minHeight: "70vh" }}>
+        <div className=" d-xl-flex d-sm-flex" style={{ minHeight: "50vh" }}>
           <div
             className="card-body d-xl-flex justify-content-center align-items-center"
             align="center"

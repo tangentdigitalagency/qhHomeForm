@@ -16,13 +16,13 @@ class S7Personalnfo extends Component {
 
   render() {
     return (
-      <div className="card shadow-lg" style={{ minHeight: "80vh" }}>
+      <div className="card shadow-lg" style={{ borderRadius: "25px" }}>
         <CommonComponents
           currentStep={this.props.currentStep}
           totalSteps={this.props.totalSteps}
           previousStep={this.props.previousStep}
         />
-        <div className="d-flex" style={{ minHeight: "70vh" }}>
+        <div className="d-flex" style={{ minHeight: "50vh" }}>
           <div
             className="card-body d-xl-flex justify-content-center align-items-center"
             align="center"
@@ -45,11 +45,11 @@ class S7Personalnfo extends Component {
                     message: "Please Enter Your phone number !",
                   },
                   {
-                    max: 12,
-                    message: "Max Length Of Your Phone Number Is 12 Characters",
+                    max: 10,
+                    message: "Please Enter A Correct Phone Number",
                   },{
-                    min: 12,
-                    message: "Min Length Of Your Phone Number Is 12 Characters",
+                    min: 10,
+                    message: "Please Enter A Correct Phone Number",
                   }
                 ]}
               >
@@ -72,7 +72,7 @@ class S7Personalnfo extends Component {
                   },
                   {
                     type: "email",
-                    message: "Email Is Not Currect",
+                    message: "Email Is Not Correct",
                   },
                 ]}
               >

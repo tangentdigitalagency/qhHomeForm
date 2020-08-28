@@ -27,11 +27,21 @@ a {
 	text-align: center;
 }
 
+.card .shadow-lg {
+
+	border-radius: 25px;
+}
+
+.-xl-flex .d-sm-flex{
+	min-height: 50vh;
+}
+
 .tcpa {
 	font-size: small;
 	font-weight: lighter;
 	max-width: 100%;
 }
+
 
 .more {
 	border-radius: 20px;

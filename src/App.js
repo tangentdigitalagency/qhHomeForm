@@ -23,7 +23,7 @@ class App extends Component {
 			//Test_Lead:1,
 			//Skip_XSL:1,
 			//Match_With_Partner_ID:"",
-			//Redirect_URL:'',
+			Redirect_URL:'www.quotehound.com/quotes/thank-you-home-quote',
 			//Referral_URL:'',
 			//Litigator:'Yes',
 			//Age_In_Seconds:5,
@@ -36,7 +36,7 @@ class App extends Component {
 			//Optout:'',
 			//Unique_Identifier:'',
 			//Time_On_Page:12,
-			//Trusted_Form_URL:'',
+			Trusted_Form_URL:'',
 			TCPA_Consent:'Yes',
 			//TCPA_Language:'',
 			LeadiD_Token:'',
@@ -276,7 +276,13 @@ class App extends Component {
 								<StepWizard initialStep={1} >
 									<S1OwnOrRent 
 										ownOrRent={this.state.postData.ownOrRent}
-										onChange={(value)=>{this.handleChange(value)}}
+										onChange={(value)=>{
+											
+											this.handleChange(value);
+											this.setState({ postData: { ...this.state.postData, LeadiD_Token: document.getElementById('leadid_token').value, Trusted_Form_URL: document.getElementById('Trusted_Form_URL_0').value } })
+							console.log(document.getElementById('Trusted_Form_URL_0'));
+										
+										}}
 									/> 
 									<S2HomeType
 										Year_Built={this.state.postData.Year_Built}
