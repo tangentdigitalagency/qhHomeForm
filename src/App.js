@@ -3,7 +3,10 @@ import React, { Component } from "react";
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "antd/dist/antd.css";
 import "./App.css";
+import Grid from '@material-ui/core/Grid';
 import Logo from './Assets/logo.png';
+import { Typography } from 'antd';
+
 import S1OwnOrRent from "./components/S1OwnOrRent"; 
 import S2HomeType from "./components/S2HomeType";
 import StepWizard from 'react-step-wizard'; 
@@ -407,6 +410,46 @@ class App extends Component {
 						</div>
 					</div>
 				</div>
+
+				<Grid container xs={12} align='center' style={{justifyContent:'center'}}>
+					<Grid container xs={8} style={{justifyContent:'center'}}>
+						<Grid item xs={12}>
+							<Typography style={{fontWeight:700,lineHeight:1.5}}>Providers Include:</Typography>
+						</Grid>
+						<Grid item lg={2} xs={12} style={{marginTop:'1rem'}}>
+							<img width="80%" height="auto" object-fit="fit" src={require('./Assets/1.png')}/>
+						</Grid>
+						<Grid item lg={2} xs={12} style={{marginTop:'1rem'}}>
+							<img width="80%" height="auto" object-fit="fit" src={require('./Assets/2.png')}/>
+						</Grid>
+						<Grid item lg={2} xs={12} style={{marginTop:'1rem'}}>
+							<img width="80%" height="auto" object-fit="fit"  src={require('./Assets/3.png')}/>
+						</Grid>
+						<Grid item lg={2} xs={12} style={{marginTop:'0rem'}}>
+							<img width="80%" height="auto" src={require('./Assets/4.png')}/>
+						</Grid>
+						<Grid item lg={2} xs={12} style={{marginTop:'1rem'}}>
+							<img width="80%" height="auto" object-fit="fit"  src={require('./Assets/5.png')}/>
+						</Grid>
+					</Grid>
+					<Grid container xs={10} style={{paddingBottom:'1rem',marginTop:'1rem'}}>
+						<Grid item lg={3} xs={12} style={{alignSelf:'flex-end'}}>
+							<Typography style={{fontSize:'15px',color:'rgb(166, 166, 166)'}}>@ 2020 Quotehound</Typography>
+						</Grid>
+						<Grid item lg={6} xs={0}/>
+						<Grid container lg={3} xs={12}>
+							<Grid item lg={4} xs={12} style={{alignSelf:'center',marginTop:'1rem'}}>
+								<Typography style={{fontSize:'15px',color:'rgb(166, 166, 166)',fontWeight:600}}><a href="https://quotehound.com/" style={{color:'rgb(166,166,166)',fontWeight:'400'}}>Visit Us</a></Typography>
+							</Grid>
+							<Grid item lg={4} xs={12} style={{alignSelf:'center',marginTop:'1rem'}}>
+								<Typography style={{fontSize:'15px',color:'rgb(166, 166, 166)'}}><a href="https://quotehound.com/privacy-policy" style={{color:'rgb(166,166,166)',fontWeight:'400'}}>Privacy Policy</a></Typography>
+							</Grid>
+							<Grid item lg={4} xs={12} style={{alignSelf:'center',marginTop:'1rem'}}>
+								<Typography style={{fontSize:'15px',color:'rgb(166, 166, 166)',fontWeight:600}}><a href="https://quotehound.com/terms-conditions" style={{color:'rgb(166,166,166)',fontWeight:'400'}}>Terms & Conditions</a></Typography>
+							</Grid>
+						</Grid>
+					</Grid>
+				</Grid>
 			</div>
 		);
 	}
