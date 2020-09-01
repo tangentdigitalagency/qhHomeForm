@@ -1,13 +1,13 @@
 import React, { Component } from "react";
 import { Form, Input, Select, Button } from "antd";
 import CommonComponents from "./CommonComponents";
+import Axios from "axios";
 const { Option } = Select;
 
 class S10Personalnfo extends Component {
   state = {};
 
   onFinish = (values) => {
-    this.props.nextStep();
     console.log("Success:", values);
   };
 
@@ -15,9 +15,22 @@ class S10Personalnfo extends Component {
     console.log("Failed:", errorInfo);
   };
 
+  PostDataOfHomeInsurance = (object) => {
+    console.log(object);
+    Axios.post("https://leads.quotehound.com/genericPostlead.php", null, {
+      params: object,
+    })
+      .then((res) => {
+        console.log(res.data);
+      })
+      .catch((err) => {
+        if (err) throw err;
+      });
+  };
+
   render() {
     return (
-      <div className="card shadow-lg" style={{ borderRadius: "25px"}}>
+      <div className="card shadow-lg" style={{ borderRadius: "25px" }}>
         <CommonComponents
           currentStep={this.props.currentStep}
           totalSteps={this.props.totalSteps}
@@ -46,11 +59,13 @@ class S10Personalnfo extends Component {
                   {
                     required: true,
                     message: "Please Enter Your City Name!",
-                  },{
-                    max:100, message:'Max Length Of City is 100 Characters'
-                }
-                ]}>
-                
+                  },
+                  {
+                    max: 100,
+                    message: "Max Length Of City is 100 Characters",
+                  },
+                ]}
+              >
                 <Input
                   onChange={(value) => {
                     this.props.onChange(value, "");
@@ -68,8 +83,8 @@ class S10Personalnfo extends Component {
                     required: true,
                     message: "Please Select An Option!",
                   },
-                ]}>
-                
+                ]}
+              >
                 <Select
                   onChange={(value) => {
                     this.props.onChange("", value);
@@ -105,11 +120,15 @@ class S10Personalnfo extends Component {
                 </p>
               </Form.Item>
               <Form.Item>
-                <Button 
+                <Button
                   type="primary"
                   htmlType="submit"
                   block
                   size="large"
+                  onClick={() =>{
+                    this.PostDataOfHomeInsurance(this.props.object);
+                    }
+                  }
                 >
                   Get My Quote!
                 </Button>

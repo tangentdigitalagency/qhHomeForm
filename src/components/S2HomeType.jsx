@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Form, Select, Button } from "antd";
 import CommonComponents from "./CommonComponents";
-import FormItem from "antd/lib/form/FormItem";
 const { Option } = Select;
 class S2HomeType extends Component {
   state = {

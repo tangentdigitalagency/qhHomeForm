@@ -468,27 +468,3 @@ const CompanyNameList=[
 ];
 
 export default CompanyNameList;
-
-const companyName = [
-    "Company Not Listed",
-    "State Farm Insurance",
-    "21st Century Insurance",
-    "AAA Insurance Co.",
-    "AIG",
-    "AIU Insurance",
-    "Alfa",
-    "Allied",
-    "Allstate Insurance",
-    "Amco Ins Co",
-    "American Alliance Ins Co",
-    "American Automobile Insurance",
-    "American Direct Business Insurance",
-    "American Economy Ins Co",
-    "American Empire Insurance",
-    "American Family Insurance ",
-    "American Financial ",
-    "American Home Assurance ",
-    "American Insurance ",
-    "Ins American International Ins ",
-    "American International Pacific",
-  ];
