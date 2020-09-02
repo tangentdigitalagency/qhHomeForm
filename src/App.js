@@ -18,7 +18,7 @@ import S7Personalnfo from "./components/S7Personalnfo";
 import S8Personalnfo from "./components/S8Personalnfo";
 import S9Personalnfo from "./components/S9Personalnfo";
 import S10Personalnfo from "./components/S10Personalnfo";
-
+ 
 class App extends Component {
   state = {
     postData: {
@@ -27,7 +27,7 @@ class App extends Component {
       Redirect_URL: "www.quotehound.com/quotes/thank-you-home-quote",
       SRC: "quotehound.com",
       Landing_Page: "quotehound.com",
-      IP_Address: "",
+      IP_Address: "75.2.92.149",
       Sub_ID: 101,
       Pub_ID: 101, 
       TCPA_Consent: "Yes",
@@ -77,32 +77,32 @@ class App extends Component {
       Trusted_Form_URL: "",
       LeadiD_Token: "",
       //form 2 fields
-      Year_Built: "",
-      Property_Type: "",
+      Year_Built: "2019",
+      Property_Type: "Single Family",
       // form 3 fields
-      Stories: "",
-      Square_Footage: "",
+      Stories: "2",
+      Square_Footage: "500",
       //form 4 fields
-      Currently_insured: "",
-      Current_Insurance_Company: "",
+      Currently_insured: "Yes",
+      Current_Insurance_Company: "AAA",
       //form 5 fields
-      Claims: "", 
+      Claims: "3", 
       //howMany: "",
       //form 6 fields
-      First_Name: "",
-      Last_Name: "",
+      First_Name: "John",
+      Last_Name: "Doe",
       //form 7 fields
-      Primary_Phone: "", 
-      Email: "",
+      Primary_Phone: "3125557146", 
+      Email: "test@nags.us",
       //form 8 fields
-      DOB: "",
-      Gender: "",
+      DOB: "12/23/1980",
+      Gender: "Male",
       //form 9 fields
       Zip: "60610", 
-      Address: "",
+      Address: "123 Main St.",
       //form 10 fields
-      City: "",
-      Credit: "",
+      City: "Chicago",
+      Credit: "Good",
       //end
 
     },
@@ -122,6 +122,7 @@ class App extends Component {
   };
 
   handleChangeYear = (value) => {
+    
     this.setState({
       postData: {
         ...this.state.postData,

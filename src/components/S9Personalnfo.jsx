@@ -53,7 +53,8 @@ class S9Personalnfo extends Component {
                   },
                 ]}
               >
-                <Input
+                <Input 
+                defaultValue={this.props.Zip}
                   onChange={(value) => {
                     this.props.onChange(value, "");
                   }}
@@ -77,6 +78,7 @@ class S9Personalnfo extends Component {
                 ]}
               >
                 <Input
+                  defaultValue={this.props.Address}
                   onChange={(value) => {
                     this.props.onChange("", value);
                   }}

@@ -2,8 +2,10 @@ import React, { Component } from "react";
 import { Form, Input, Button } from "antd";
 import CommonComponents from "./CommonComponents";
 
-class S6Personalnfo extends Component {
-  state = {};
+class S6Personalnfo extends Component { 
+  constructor(props) {
+    super(props);
+  }
 
   onFinish = (values) => {
     this.props.nextStep();
@@ -50,6 +52,8 @@ class S6Personalnfo extends Component {
                 ]}
               >
                 <Input
+                  defaultValue={this.props.First_Name}
+                  
                   onChange={(e) => {
                     this.props.onChange(e, "");
                   }}
@@ -72,6 +76,7 @@ class S6Personalnfo extends Component {
                 ]}
               >
                 <Input
+                defaultValue={this.props.Last_Name}
                   onChange={(e) => {
                     this.props.onChange("", e);
                   }}

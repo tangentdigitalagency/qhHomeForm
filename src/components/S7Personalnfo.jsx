@@ -53,7 +53,9 @@ class S7Personalnfo extends Component {
                   }
                 ]}
               >
-                <Input type="number"
+                <Input 
+                  defaultValue={this.props.Primary_Phone}
+                  type="number"
                   onChange={(value) => {
                     this.props.onChange(value, "");
                   }}
@@ -63,6 +65,7 @@ class S7Personalnfo extends Component {
               </Form.Item>
               <h5>Email</h5>
               <Form.Item
+                value={this.props.Email}
                 name="Email"
                 hasFeedback
                 rules={[
@@ -77,6 +80,7 @@ class S7Personalnfo extends Component {
                 ]}
               >
                 <Input
+                  defaultValue={this.props.Email}
                   onChange={(value) => {
                     this.props.onChange("", value);
                   }}

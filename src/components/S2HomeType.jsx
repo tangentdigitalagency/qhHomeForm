@@ -86,6 +86,8 @@ class S2HomeType extends Component {
                 ]}
               >
                 <Select
+                
+                  //defaultValue={this.props.Year_Built}
                   size="large"
                   placeholder="House Built Years"
                   onChange={(value) => {
@@ -113,6 +115,7 @@ class S2HomeType extends Component {
                 ]}
               >
                 <Select
+                  //defaultValue={this.props.Property_Type}
                   size="large"
                   placeholder="Property Type"
                   onChange={(value1) => this.props.onChange("", value1)}

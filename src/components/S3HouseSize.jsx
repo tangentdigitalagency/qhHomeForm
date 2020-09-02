@@ -72,6 +72,7 @@ class S3HouseSize extends Component {
                 ]}
               >
                 <Select
+                //defaultValue={this.props.Stories}
                   size="large"
                   placeholder="Number Of Stories"
                   onChange={(value) => {
@@ -90,6 +91,7 @@ class S3HouseSize extends Component {
               <h5>Size In Square Feet</h5>
               <Form.Item>
                 <Select
+                  //defaultValue={this.props.Square_Footage}
                   size="large"
                   placeholder="House Size"
                   onChange={(value) => {

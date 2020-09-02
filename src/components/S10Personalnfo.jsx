@@ -67,6 +67,7 @@ class S10Personalnfo extends Component {
                 ]}
               >
                 <Input
+                  defaultValue={this.props.City}
                   onChange={(value) => {
                     this.props.onChange(value, "");
                   }}
