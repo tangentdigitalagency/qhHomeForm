@@ -41,7 +41,7 @@ class App extends Component {
       Home_Value: 15000,
       Construction_Type: "unknown",
       Roof_Type: "unknown",
-      Heating_type: "other",
+      Heating_type: "Other",
       Coverage_Type: "unknown",
       Liability: 100000,
       Deductible: 100,

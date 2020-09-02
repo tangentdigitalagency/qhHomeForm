@@ -92,10 +92,10 @@ class S10Personalnfo extends Component {
                   size="large"
                   placeholder="Credit Rating"
                 >
-                  <Option value="average">Average</Option>
-                  <Option value="poor">Poor</Option>
+                  <Option value="Average">Average</Option>
+                  <Option value="Poor">Poor</Option>
                   <Option value="Good">Good</Option>
-                  <Option value="excellent">Excellent</Option>
+                  <Option value="Excellent">Excellent</Option>
                 </Select>
               </Form.Item>
 

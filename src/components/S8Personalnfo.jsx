@@ -80,9 +80,9 @@ class S8Personalnfo extends Component {
                   size="large"
                   placeholder="Select An Option"
                 >
-                  <Option value="male">Male</Option>
-                  <Option value="female">Female</Option>
-                  <Option value="non-binary">Non Binary</Option>
+                  <Option value="Male">Male</Option>
+                  <Option value="Female">Female</Option>
+                  <Option value="Non-binary">Non Binary</Option>
                 </Select>
               </Form.Item>
               <Form.Item>
