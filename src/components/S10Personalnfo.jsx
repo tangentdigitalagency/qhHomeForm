@@ -45,6 +45,9 @@ class S10Personalnfo extends Component {
               name="basic"
               className="mywidth"
               onFinish={this.onFinish}
+              initialValues={{
+                City : this.props.City
+              }}
               onFinishFailed={this.onFinishFailed}
             >
               <Form.Item>

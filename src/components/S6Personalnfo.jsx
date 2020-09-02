@@ -33,6 +33,10 @@ class S6Personalnfo extends Component {
               name="basic"
               className="mywidth"
               onFinish={this.onFinish}
+              initialValues={{
+                First_Name: this.props.First_Name,
+                Last_Name: this.props.Last_Name
+              }}
               onFinishFailed={this.onFinishFailed}
             >
               <h3>Personal Info</h3>
@@ -51,9 +55,7 @@ class S6Personalnfo extends Component {
                   }
                 ]}
               >
-                <Input
-                  defaultValue={this.props.First_Name}
-                  
+                <Input  
                   onChange={(e) => {
                     this.props.onChange(e, "");
                   }}
@@ -75,8 +77,7 @@ class S6Personalnfo extends Component {
                 }
                 ]}
               >
-                <Input
-                defaultValue={this.props.Last_Name}
+                <Input 
                   onChange={(e) => {
                     this.props.onChange("", e);
                   }}

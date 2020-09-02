@@ -31,6 +31,10 @@ class S7Personalnfo extends Component {
               name="basic"
               className="mywidth"
               onFinish={this.onFinish}
+              initialValues={{
+                Phone: this.props.Primary_Phone,
+                Email: this.props.Email
+              }}
               onFinishFailed={this.onFinishFailed}
             >
               <h3>Personal Info</h3>

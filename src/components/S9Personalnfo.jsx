@@ -30,6 +30,10 @@ class S9Personalnfo extends Component {
               name="basic"
               className="mywidth"
               onFinish={this.onFinish}
+              initialValues={{
+                Zip: this.props.Zip,
+                Address: this.props.Address
+              }}
               onFinishFailed={this.onFinishFailed}
             >
               <h3>Personal Info</h3>
@@ -53,8 +57,7 @@ class S9Personalnfo extends Component {
                   },
                 ]}
               >
-                <Input 
-                defaultValue={this.props.Zip}
+                <Input  
                   onChange={(value) => {
                     this.props.onChange(value, "");
                   }}
@@ -77,8 +80,7 @@ class S9Personalnfo extends Component {
                   },
                 ]}
               >
-                <Input
-                  defaultValue={this.props.Address}
+                <Input 
                   onChange={(value) => {
                     this.props.onChange("", value);
                   }}

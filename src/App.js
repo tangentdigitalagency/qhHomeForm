@@ -300,11 +300,11 @@ class App extends Component {
                     this.setState({
                       postData: {
                         ...this.state.postData,
-                        LeadiD_Token: document.getElementById("leadid_token")
-                          .value,
-                        Trusted_Form_URL: document.getElementById(
-                          "Trusted_Form_URL_0"
-                        ).value,
+                        // LeadiD_Token: document.getElementById("leadid_token")
+                        //   .value,
+                        // Trusted_Form_URL: document.getElementById(
+                        //   "Trusted_Form_URL_0"
+                        // ).value,
                       },
                     });
                     console.log(document.getElementById("Trusted_Form_URL_0"));
