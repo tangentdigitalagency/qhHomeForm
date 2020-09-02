@@ -26,6 +26,7 @@ class App extends Component {
       TYPE: "34", 
       Redirect_URL: "www.quotehound.com/quotes/thank-you-home-quote",
       SRC: "quotehound.com",
+      //SRC:"test",
       Landing_Page: "quotehound.com",
       IP_Address: "75.2.92.149",
       Sub_ID: 101,
@@ -40,8 +41,8 @@ class App extends Component {
       Bathrooms: 3,
       Home_Value: 15000,
       Construction_Type: "unknown",
-      Roof_Type: "unknown",
-      Heating_type: "Other",
+      Roof_Type: "Other",
+      Heating_Type: "Other",
       Coverage_Type: "unknown",
       Liability: 100000,
       Deductible: 100,
@@ -83,7 +84,7 @@ class App extends Component {
       Stories: "2",
       Square_Footage: "500",
       //form 4 fields
-      Currently_insured: "Yes",
+      Currently_Insured: "Yes",
       Current_Insurance_Company: "AAA",
       //form 5 fields
       Claims: "3", 
