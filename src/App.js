@@ -29,10 +29,8 @@ class App extends Component {
       Landing_Page: "quotehound.com",
       IP_Address: "",
       Sub_ID: 101,
-      Pub_ID: 101,
-      Trusted_Form_URL: "",
+      Pub_ID: 101, 
       TCPA_Consent: "Yes",
-      LeadiD_Token: "",
       State: "IL",
       Occupancy: "Primary Residence",
       Garage: "unknown",
@@ -75,6 +73,9 @@ class App extends Component {
       //start 
       // form 1 field
       ownOrRent: "",
+      // from script
+      Trusted_Form_URL: "",
+      LeadiD_Token: "",
       //form 2 fields
       Year_Built: "",
       Property_Type: "",
