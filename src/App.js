@@ -72,7 +72,7 @@ class App extends Component {
       
       //start 
       // form 1 field
-      ownOrRent: "",
+      //ownOrRent: "",
       // from script
       Trusted_Form_URL: "",
       LeadiD_Token: "",
@@ -87,7 +87,7 @@ class App extends Component {
       Current_Insurance_Company: "",
       //form 5 fields
       Claims: "", 
-      howMany: "",
+      //howMany: "",
       //form 6 fields
       First_Name: "",
       Last_Name: "",
@@ -301,9 +301,9 @@ class App extends Component {
                         ...this.state.postData,
                         LeadiD_Token: document.getElementById("leadid_token")
                           .value,
-                        // Trusted_Form_URL: document.getElementById(
-                        //   "Trusted_Form_URL_0"
-                        // ).value,
+                        Trusted_Form_URL: document.getElementById(
+                          "Trusted_Form_URL_0"
+                        ).value,
                       },
                     });
                     console.log(document.getElementById("Trusted_Form_URL_0"));
@@ -349,9 +349,9 @@ class App extends Component {
                   howMany={this.state.postData.howMany}
                   onChange={(value, value1) => {
                     if (value !== "") {
-                      this.handleChangeClaims(value);
-                    } else if (value1 !== "") {
-                      this.handleChangeHowMany(value1);
+                      //this.handleChangeHowMany(value);
+                    } else if (value1 !== "") { 
+                      this.handleChangeClaims(value1);
                     }
                   }}
                 />
