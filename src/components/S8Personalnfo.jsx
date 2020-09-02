@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import moment from "moment";
 import { Form, Button, Select, DatePicker, Space } from "antd";
 import CommonComponents from "./CommonComponents";
-const dateFormat = "DD/MM/YYYY";
+const dateFormat = "MM/DD/YYYY";
 const { Option } = Select;
 class S8Personalnfo extends Component {
   state = {};
