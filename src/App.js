@@ -23,27 +23,28 @@ class App extends Component {
   state = {
     postData: {
       //extra entries
+      Key: "rRkWg9.WrP.Ahm.Ic9hNr9kZruQMcRpNruwIc9tVxVpWrV4MgexMl8QKHpEE",
       TYPE: "34", 
-      Redirect_URL: "www.quotehound.com/quotes/thank-you-home-quote",
+      Redirect_URL: "https://www.quotehound.com/quotes/thank-you-home-quote",
       SRC: "quotehound.com",
       //SRC:"test",
       Landing_Page: "quotehound.com",
-      IP_Address: "75.2.92.149",
+      IP_Address: "",
       Sub_ID: 101,
-      Pub_ID: 101, 
+      Pub_ID: 102, 
       TCPA_Consent: "Yes",
       State: "IL",
       Occupancy: "Primary Residence",
-      Garage: "unknown",
-      Foundation: "unknown",
-      Home_Security: "unknown",
+      Garage: "Unknown",
+      Foundation: "Unknown",
+      Home_Security: "Unknown",
       Bedrooms: 4,
       Bathrooms: 3,
-      Home_Value: 15000,
-      Construction_Type: "unknown",
+      Home_Value: 150000,
+      Construction_Type: "Unknown",
       Roof_Type: "Other",
       Heating_Type: "Other",
-      Coverage_Type: "unknown",
+      Coverage_Type: "Unknown",
       Liability: 100000,
       Deductible: 100,
     
@@ -110,7 +111,7 @@ class App extends Component {
   };
 
   componentDidUpdate = () => {
-    console.log(this.state);
+    //console.log(this.state);
   };
 
   handleChange = (v) => {
