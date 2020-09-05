@@ -3,9 +3,7 @@ import { Form, Input, Button } from "antd";
 import CommonComponents from "./CommonComponents";
 
 class S6Personalnfo extends Component { 
-  constructor(props) {
-    super(props);
-  }
+  
 
   onFinish = (values) => {
     this.props.nextStep();

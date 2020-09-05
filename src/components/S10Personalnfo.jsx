@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Form, Input, Select, Button } from "antd";
 import CommonComponents from "./CommonComponents";
-import Axios from "axios"; 
+import Axios from "axios";  
 const { Option } = Select;
 
 class S10Personalnfo extends Component {
@@ -20,7 +20,7 @@ class S10Personalnfo extends Component {
     Axios.post("https://leads.quotehound.com/genericPostlead.php", null, {
       params: object,
     })
-      .then((res) => { 
+      .then((res) => {  
         console.log(res.data);
       })
       .catch((err) => {

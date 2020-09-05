@@ -1,27 +1,25 @@
-import React, { Component } from "react";
-import moment from "moment";
-import { Form, Button, Select, DatePicker, Space } from "antd";
-import CommonComponents from "./CommonComponents";
-const dateFormat = "MM/DD/YYYY";
+import React, { Component } from "react"; 
+import { Form, Button, Select, Input } from "antd";
+import CommonComponents from "./CommonComponents"; 
 const { Option } = Select;
 class S8Personalnfo extends Component {
   state = {};
 
+
+
+
+
   CreateDateOfBirthSelect = () => {
-    return (
-      <Space className="w-100 text-center" direction="vertical" size={12}>
-        <DatePicker
-          onChange={(date, dateString) => {
-            console.log(dateString);
-            this.props.onChange(dateString, "");
-          }}
+    return ( 
+      <Input
+          onChange={(e)=>this.props.onChange(e,'')}
           className="w-100 text-center"
           align="center"
-          size="large"
-          defaultValue={moment("08/01/2020", dateFormat)}
-          format={dateFormat}
-        />
-      </Space>
+          size="large" 
+          maxLength={10}
+          placeholder="MM/DD/YYYY"
+          value={this.props.DOB}
+        /> 
     );
   };
 
@@ -56,9 +54,7 @@ class S8Personalnfo extends Component {
               <h3>Personal Info</h3>
                 <br />
                 <h5>Date Of Birth</h5>
-              <Form.Item
-                 >
-                
+              <Form.Item>
                 {this.CreateDateOfBirthSelect()}
               </Form.Item>
               <h5>Gender</h5>

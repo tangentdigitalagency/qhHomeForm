@@ -79,16 +79,16 @@ class App extends Component {
       Trusted_Form_URL: "",
       LeadiD_Token: "",
       //form 2 fields
-      Year_Built: "2019",
-      Property_Type: "Single Family",
+      Year_Built: "",
+      Property_Type: "",
       // form 3 fields
-      Stories: "2",
-      Square_Footage: "500",
+      Stories: "",
+      Square_Footage: "",
       //form 4 fields
-      Currently_Insured: "Yes",
-      Current_Insurance_Company: "AAA",
+      Currently_Insured: "",
+      Current_Insurance_Company: "",
       //form 5 fields
-      Claims: "3", 
+      Claims: "", 
       //howMany: "",
       //form 6 fields
       First_Name: "John",
@@ -97,14 +97,14 @@ class App extends Component {
       Primary_Phone: "3125557146", 
       Email: "test@nags.us",
       //form 8 fields
-      DOB: "12/23/1980",
-      Gender: "Male",
+      DOB: "",
+      Gender: "",
       //form 9 fields
       Zip: "60610", 
       Address: "123 Main St.",
       //form 10 fields
       City: "Chicago",
-      Credit: "Good",
+      Credit: "",
       //end
 
     },
@@ -226,7 +226,12 @@ class App extends Component {
     });
   };
 
-  handleChangeDOB = (value) => {
+  handleChangeDOB = (e) => {
+    let value = e.target.value;
+    value=value
+        .replace(/^(\d\d)(\d)$/g, "$1/$2")
+        .replace(/^(\d\d\/\d\d)(\d+)$/g, "$1/$2")
+        .replace(/[^\d\/]/g, "");
     this.setState({
       postData: {
         ...this.state.postData,
@@ -383,9 +388,9 @@ class App extends Component {
                 <S8Personalnfo
                   DOB={this.state.postData.DOB}
                   Gender={this.state.postData.Gender}
-                  onChange={(value, value1) => {
-                    if (value !== "") {
-                      this.handleChangeDOB(value);
+                  onChange={(e, value1) => {
+                    if (e !== "") {
+                      this.handleChangeDOB(e);
                     } else if (value1 !== "") {
                       this.handleChangeGender(value1);
                     }
