@@ -8,11 +8,12 @@ class S5ClaimedAnything extends Component {
 
   CreateHowManySelect = () => {
     let i = 0;
+    const claimsValues=['None','1','2','3','4','5','6+','Unknown'];
     const arr = [];
-    for (i = 0; i <= 6; i++) {
+    for (i = 0; i < claimsValues.length; i++) {
       arr.push(
-        <Option className="p-0 text-center" key={i} value={i}>
-          {i}
+        <Option className="p-0 text-center" key={claimsValues[i]} value={claimsValues[i]}>
+          {claimsValues[i]}
         </Option>
       );
     }

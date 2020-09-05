@@ -7,6 +7,7 @@ class S3HouseSize extends Component {
 
   CreateHomeSizeSelect = () => {
     let i = 0;
+    
     const arr = [];
     for (i = 500; i <= 5200; i += 100) {
       arr.push(
@@ -20,10 +21,11 @@ class S3HouseSize extends Component {
 
   CreateNumberOfStoriesSelect = () => {
     const arr = [];
-    for (let j = 1; j <= 4; j++) {
+    const storiesValues=['1','1 1/2','2','3','4','Bi-Level','Tri-Level'];
+    for (let j = 0; j < storiesValues.length; j++) {
       arr.push(
-        <Option className="p-0 text-center" key={j} value={j}>
-          {j}
+        <Option className="p-0 text-center" key={storiesValues[j]} value={storiesValues[j]}>
+          {storiesValues[j]}
         </Option>
       );
     }
