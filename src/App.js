@@ -85,7 +85,7 @@ class App extends Component {
       Stories: "",
       Square_Footage: "",
       //form 4 fields
-      Currently_Insured: "",
+      Currently_Insured: "Yes",
       Current_Insurance_Company: "",
       //form 5 fields
       Claims: "", 
