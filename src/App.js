@@ -5,7 +5,7 @@ import "antd/dist/antd.css";
 import "./App.css";
 import Grid from "@material-ui/core/Grid";
 import Logo from "./Assets/logo.png";
-import { Typography } from "antd";
+import {Button, Typography } from "antd";
 
 import S1OwnOrRent from "./components/S1OwnOrRent";
 import S2HomeType from "./components/S2HomeType";
@@ -18,20 +18,20 @@ import S7Personalnfo from "./components/S7Personalnfo";
 import S8Personalnfo from "./components/S8Personalnfo";
 import S9Personalnfo from "./components/S9Personalnfo";
 import S10Personalnfo from "./components/S10Personalnfo";
- 
+import {PhoneOutlined } from "@ant-design/icons"
 class App extends Component {
   state = {
     postData: {
       //extra entries
       Key: "rRkWg9.WrP.Ahm.Ic9hNr9kZruQMcRpNruwIc9tVxVpWrV4MgexMl8QKHpEE",
-      TYPE: "34", 
+      TYPE: "34",
       Redirect_URL: "https://www.quotehound.com/quotes/thank-you-home-quote",
       SRC: "quotehoundgooglehomeform",
       //SRC:"test",
       Landing_Page: "quotehound.com",
       IP_Address: "",
       Sub_ID: 101,
-      Pub_ID: 102, 
+      Pub_ID: 102,
       TCPA_Consent: "Yes",
       State: "IL",
       Occupancy: "Primary Residence",
@@ -47,7 +47,7 @@ class App extends Component {
       Coverage_Type: "Unknown",
       Liability: 100000,
       Deductible: 100,
-    
+
       //Test_Lead:1,
       //Skip_XSL:1,
       //Match_With_Partner_ID:"",
@@ -71,7 +71,7 @@ class App extends Component {
       //Central_Air_Conditioning:'',  
       //Years_At_Current_Residence:'',
       //Years_At_Previous_Residence:'',
-      
+
       //start 
       // form 1 field
       //ownOrRent: "",
@@ -88,19 +88,19 @@ class App extends Component {
       Currently_Insured: "Yes",
       Current_Insurance_Company: "",
       //form 5 fields
-      Claims: "", 
+      Claims: "",
       //howMany: "",
       //form 6 fields
       First_Name: "John",
       Last_Name: "Doe",
       //form 7 fields
-      Primary_Phone: "3125557146", 
+      Primary_Phone: "3125557146",
       Email: "test@nags.us",
       //form 8 fields
       DOB: "",
       Gender: "",
       //form 9 fields
-      Zip: "60610", 
+      Zip: "60610",
       Address: "123 Main St.",
       //form 10 fields
       City: "Chicago",
@@ -124,7 +124,7 @@ class App extends Component {
   };
 
   handleChangeYear = (value) => {
-    
+
     this.setState({
       postData: {
         ...this.state.postData,
@@ -228,10 +228,10 @@ class App extends Component {
 
   handleChangeDOB = (e) => {
     let value = e.target.value;
-    value=value
-        .replace(/^(\d\d)(\d)$/g, "$1/$2")
-        .replace(/^(\d\d\/\d\d)(\d+)$/g, "$1/$2")
-        .replace(/[^\d\/]/g, "");
+    value = value
+      .replace(/^(\d\d)(\d)$/g, "$1/$2")
+      .replace(/^(\d\d\/\d\d)(\d+)$/g, "$1/$2")
+      .replace(/[^\d\/]/g, "");
     this.setState({
       postData: {
         ...this.state.postData,
@@ -291,12 +291,22 @@ class App extends Component {
           overflow: "hidden",
         }}
       >
+        <nav class="navbar navbar-light "><div class="container">
+          <ul class="nav  nav-fill mx-2 w-sm-100">
+            <li class="nav-item">
+              <img src={Logo} class="mx-2 my-4" width="150px" alt="" />
+            </li>
+          </ul>
+          <ul class="nav  nav-fill mx-2 w-sm-100">
+            <li class="nav-item">
+              <Button type="primary" size="middle" icon={<PhoneOutlined rotate="90" />} >
+                  (855) 434-4762 
+              </Button>
+            </li>
+          </ul>
+        </div>
+        </nav>
         <div className="container">
-          <div className="row">
-            <div className="col">
-              <img className="my-4" src={Logo} alt="Uotehound" width="150px" />
-            </div>
-          </div>
           <div className="row">
             <div className="col">
               <StepWizard initialStep={1}>
@@ -358,7 +368,7 @@ class App extends Component {
                   onChange={(value, value1) => {
                     if (value !== "") {
                       //this.handleChangeHowMany(value);
-                    } else if (value1 !== "") { 
+                    } else if (value1 !== "") {
                       this.handleChangeClaims(value1);
                     }
                   }}
