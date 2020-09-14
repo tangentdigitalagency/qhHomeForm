@@ -9,6 +9,7 @@ class S10Personalnfo extends Component {
 
   onFinish = (values) => {
     console.log("Success:", values);
+    this.props.nextStep();
   };
 
   onFinishFailed = (errorInfo) => {

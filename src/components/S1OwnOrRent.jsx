@@ -19,6 +19,7 @@ class S1OwnOrRent extends Component {
           currentStep={this.props.currentStep}
           totalSteps={this.props.totalSteps}
           previousStep={this.props.previousStep}
+          
         />
 
         <div className=" d-xl-flex d-sm-flex" style={{ minHeight: "50vh" }}>
@@ -26,12 +27,13 @@ class S1OwnOrRent extends Component {
             className="card-body d-xl-flex justify-content-center align-items-center"
             align="center"
           >
-            <Form
+           <Form
               name="basic"
               className="mywidth"
               onFinish={this.onFinish}
               onFinishFailed={this.onFinishFailed}
             >
+               <h1> Start Saving On Homeowners Insurance Today!</h1>
               <h3>Do You Own Or Rent</h3>
               <br />
               <Form.Item

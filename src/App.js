@@ -19,13 +19,13 @@ import S8Personalnfo from "./components/S8Personalnfo";
 import S9Personalnfo from "./components/S9Personalnfo";
 import S10Personalnfo from "./components/S10Personalnfo";
 import {PhoneOutlined } from "@ant-design/icons"
+import S11Final from "./components/S11Final";
 class App extends Component {
   state = {
     postData: {
       //extra entries
       Key: "rRkWg9.WrP.Ahm.Ic9hNr9kZruQMcRpNruwIc9tVxVpWrV4MgexMl8QKHpEE",
       TYPE: "34",
-      Redirect_URL: "https://www.quotehound.com/quotes/thank-you-home-quote",
       SRC: "quotehoundgooglehomeform",
       //SRC:"test",
       Landing_Page: "quotehound.com",
@@ -33,18 +33,18 @@ class App extends Component {
       Sub_ID: 101,
       Pub_ID: 102,
       TCPA_Consent: "Yes",
-      State: "IL",
-      Occupancy: "Primary Residence",
-      Garage: "Unknown",
-      Foundation: "Unknown",
-      Home_Security: "Unknown",
+      State: "",
+      Occupancy: "",
+      Garage: "",
+      Foundation: "",
+      Home_Security: "",
       Bedrooms: 4,
       Bathrooms: 3,
       Home_Value: 150000,
-      Construction_Type: "Unknown",
-      Roof_Type: "Other",
-      Heating_Type: "Other",
-      Coverage_Type: "Unknown",
+      Construction_Type: "",
+      Roof_Type: "",
+      Heating_Type: "",
+      Coverage_Type: "",
       Liability: 100000,
       Deductible: 100,
 
@@ -91,19 +91,19 @@ class App extends Component {
       Claims: "",
       //howMany: "",
       //form 6 fields
-      First_Name: "John",
-      Last_Name: "Doe",
+      First_Name: "",
+      Last_Name: "",
       //form 7 fields
-      Primary_Phone: "3125557146",
-      Email: "test@nags.us",
+      Primary_Phone: "",
+      Email: "",
       //form 8 fields
       DOB: "",
       Gender: "",
       //form 9 fields
-      Zip: "60610",
-      Address: "123 Main St.",
+      Zip: "",
+      Address: "",
       //form 10 fields
-      City: "Chicago",
+      City: "",
       Credit: "",
       //end
 
@@ -299,8 +299,8 @@ class App extends Component {
           </ul>
           <ul class="nav  nav-fill mx-2 w-sm-100">
             <li class="nav-item">
-              <Button type="primary" size="middle" icon={<PhoneOutlined rotate="90" />} >
-                  (855) 434-4762 
+              <Button type="primary" size="middle" icon={<PhoneOutlined rotate="90" />}  onClick={(e) => {e.preventDefault(); window.location.href='tel:8556226620'; }} >
+              (855) 622-6620
               </Button>
             </li>
           </ul>
@@ -429,6 +429,7 @@ class App extends Component {
                   }}
                   object={this.state.postData}
                 />
+                <S11Final postData2={this.state.postData}/>
               </StepWizard>
             </div>
           </div>
