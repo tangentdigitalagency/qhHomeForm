@@ -19,7 +19,7 @@ class S11Final extends Component {
 		return (
 			
 			<div className="container pt-0 main-content-container">
-				<h1 className="center"> You Are On Your Way To Saving!</h1>
+				<h1 className="center"> You Are On Your Way To Saving On Your <b>Home</b> Insurance</h1>
 				<br></br>
                 <div id="target"> 
 				<UncontrolledLottie />
