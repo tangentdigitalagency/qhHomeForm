@@ -32,8 +32,8 @@ class S7Personalnfo extends Component {
               className="mywidth"
               onFinish={this.onFinish}
               initialValues={{
-                Phone: this.props.Primary_Phone,
-                Email: this.props.Email
+                Phone: this.props.phone_home,
+                email_address: this.props.email_address
               }}
               onFinishFailed={this.onFinishFailed}
             >
@@ -58,7 +58,7 @@ class S7Personalnfo extends Component {
                 ]}
               >
                 <Input 
-                  defaultValue={this.props.Primary_Phone}
+                  defaultValue={this.props.phone_home}
                   type="number"
                   onChange={(value) => {
                     this.props.onChange(value, "");
@@ -69,7 +69,7 @@ class S7Personalnfo extends Component {
               </Form.Item>
               <h5>Email</h5>
               <Form.Item
-                value={this.props.Email}
+                value={this.props.email_address}
                 name="Email"
                 hasFeedback
                 rules={[
@@ -84,7 +84,7 @@ class S7Personalnfo extends Component {
                 ]}
               >
                 <Input
-                  defaultValue={this.props.Email}
+                  defaultValue={this.props.email_address}
                   onChange={(value) => {
                     this.props.onChange("", value);
                   }}

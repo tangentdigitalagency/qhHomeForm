@@ -59,7 +59,7 @@ class S4AboutInsurance extends Component {
               <h5>Are You Currently Insured?</h5>
               <Form.Item>
                 <BootstrapSwitchButton
-                  checked={this.props.Currently_insured}
+                  checked={this.props.currently_insured}
                   onlabel="Yes"
                   onstyle="ant-btn ant-btn-primary"
                   offlabel="No"

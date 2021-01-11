@@ -9,6 +9,7 @@ class S10Personalnfo extends Component {
 
   onFinish = (values) => {
     console.log("Success:", values);
+    
     this.props.nextStep();
   };
 
@@ -18,7 +19,7 @@ class S10Personalnfo extends Component {
 
   PostDataOfHomeInsurance = (object) => {
     console.log(object);
-    Axios.post("https://leads.quotehound.com/genericPostlead.php", null, {
+    Axios.post("https://quotehound.leadspediatrack.com/post.do", null, {
       params: object,
     })
       .then((res) => {  
@@ -47,7 +48,7 @@ class S10Personalnfo extends Component {
               className="mywidth"
               onFinish={this.onFinish}
               initialValues={{
-                City : this.props.City
+                city : this.props.city
               }}
               onFinishFailed={this.onFinishFailed}
             >
@@ -57,7 +58,7 @@ class S10Personalnfo extends Component {
               </Form.Item>
               <h5>City</h5>
               <Form.Item
-                name="City"
+                name="city"
                 hasFeedback
                 rules={[
                   {
@@ -71,7 +72,7 @@ class S10Personalnfo extends Component {
                 ]}
               >
                 <Input
-                  defaultValue={this.props.City}
+                  defaultValue={this.props.city}
                   onChange={(value) => {
                     this.props.onChange(value, "");
                   }}

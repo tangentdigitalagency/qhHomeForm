@@ -31,8 +31,8 @@ class S9Personalnfo extends Component {
               className="mywidth"
               onFinish={this.onFinish}
               initialValues={{
-                Zip: this.props.Zip,
-                Address: this.props.Address
+                zip_code: this.props.zip_code,
+                address: this.props.address
               }}
               onFinishFailed={this.onFinishFailed}
             >

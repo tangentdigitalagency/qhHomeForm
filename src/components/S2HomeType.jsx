@@ -24,14 +24,13 @@ class S2HomeType extends Component {
   CreateHomeTypeSelect = () => {
     let i = 0;
     const homeType = [
-      "Single Family ",
-      "Single Family Home",
-      "Duplex",
-      "Multi Family",
-      "Town Home",
-      "Condominium",
-      "Mobile Home",
       "Apartment ",
+      "Condominium",
+      "Duplex",
+      "Mobile Home",
+      "Multi Family",
+      "Single Family ",
+      "Town Home",
     ];
     const arr = [];
     for (i = 0; i < homeType.length; i++) {
@@ -76,7 +75,7 @@ class S2HomeType extends Component {
               <br />
               <h5>When Was Your House Built</h5>
               <Form.Item
-                name="House Built Years"
+                name="year_house_was_built"
                 hasFeedback
                 rules={[
                   {
@@ -105,7 +104,7 @@ class S2HomeType extends Component {
               </Form.Item>
               <h5>What Type Of Property Do You Have</h5>
               <Form.Item
-                name="Property Type"
+                name="type_of_property"
                 hasFeedback
                 rules={[
                   {

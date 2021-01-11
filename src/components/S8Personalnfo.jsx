@@ -18,7 +18,7 @@ class S8Personalnfo extends Component {
           size="large" 
           maxLength={10}
           placeholder="MM/DD/YYYY"
-          value={this.props.DOB}
+          value={this.props.dob}
         /> 
     );
   };

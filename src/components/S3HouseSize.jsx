@@ -21,7 +21,7 @@ class S3HouseSize extends Component {
 
   CreateNumberOfStoriesSelect = () => {
     const arr = [];
-    const storiesValues=['1','1 1/2','2','3','4','Bi-Level','Tri-Level'];
+    const storiesValues=['1','1.5','2','3','4','Bi-Level','Tri-Level'];
     for (let j = 0; j < storiesValues.length; j++) {
       arr.push(
         <Option className="p-0 text-center" key={storiesValues[j]} value={storiesValues[j]}>
@@ -64,7 +64,7 @@ class S3HouseSize extends Component {
               <br />
               <h5>Number Of Stories</h5>
               <Form.Item
-                name="stories"
+                name="number_of_stories"
                 hasFeedback
                 rules={[
                   {
@@ -91,7 +91,10 @@ class S3HouseSize extends Component {
                 </Select>
               </Form.Item>
               <h5>Size In Square Feet</h5>
-              <Form.Item>
+              <Form.Item
+               name="size_in_square_feet"
+              >
+                
                 <Select
                   //defaultValue={this.props.Square_Footage}
                   size="large"

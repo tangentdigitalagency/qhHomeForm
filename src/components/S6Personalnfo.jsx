@@ -32,8 +32,8 @@ class S6Personalnfo extends Component {
               className="mywidth"
               onFinish={this.onFinish}
               initialValues={{
-                First_Name: this.props.First_Name,
-                Last_Name: this.props.Last_Name
+                first_name: this.props.first_name,
+                last_name: this.props.last_name
               }}
               onFinishFailed={this.onFinishFailed}
             >
@@ -41,7 +41,7 @@ class S6Personalnfo extends Component {
               <br />
               <h5>First Name</h5>
               <Form.Item
-                name="First_Name"
+                name="first_name"
                 hasFeedback
                 rules={[
                   {
@@ -63,7 +63,7 @@ class S6Personalnfo extends Component {
               </Form.Item>
               <h5>Last Name</h5>
               <Form.Item
-                name="Last_Name"
+                name="last_name"
                 hasFeedback
                 rules={[
                   {

@@ -24,7 +24,9 @@ class App extends Component {
   state = {
     postData: {
       //extra entries
-      Key: "rRkWg9.WrP.Ahm.Ic9hNr9kZruQMcRpNruwIc9tVxVpWrV4MgexMl8QKHpEE",
+      lp_campaign_id:"5fe2370665025",
+      lp_campaign_key:"r7zWCbyvMYB4KF2wJq9t",
+   //   Key: "rRkWg9.WrP.Ahm.Ic9hNr9kZruQMcRpNruwIc9tVxVpWrV4MgexMl8QKHpEE",
       TYPE: "34",
       SRC: "quotehoundgooglehomeform",
       //SRC:"test",
@@ -33,7 +35,7 @@ class App extends Component {
       Sub_ID: 101,
       Pub_ID: 102,
       TCPA_Consent: "Yes",
-      State: "",
+      state: "WA",
       Occupancy: "Primary Residence",
       Garage: "Unknown",
       Foundation: "Unknown",
@@ -74,36 +76,36 @@ class App extends Component {
 
       //start 
       // form 1 field
-      //ownOrRent: "",
+     own_or_rent: "",
       // from script
-      Trusted_Form_URL: "",
-      LeadiD_Token: "",
+      trusted_form_cert_id: "",
+      jornaya_lead_id: "",
       //form 2 fields
-      Year_Built: "",
-      Property_Type: "",
+      year_house_was_built: "",
+      type_of_property: "",
       // form 3 fields
-      Stories: "",
-      Square_Footage: "",
+      number_of_stories: "",
+      size_in_square_feet: "",
       //form 4 fields
-      Currently_Insured: "Yes",
-      Current_Insurance_Company: "",
+      currently_insured: "Yes",
+      current_insurance_company: "",
       //form 5 fields
-      Claims: "",
+      any_claims_over_last_3_years: "",
       //howMany: "",
       //form 6 fields
-      First_Name: "",
-      Last_Name: "",
+      first_name: "",
+      last_name: "",
       //form 7 fields
-      Primary_Phone: "",
-      Email: "",
+      phone_home: "",
+      email_address: "",
       //form 8 fields
-      DOB: "",
-      Gender: "",
+      dob: "",
+      gender: "",
       //form 9 fields
-      Zip: "",
-      Address: "",
+      zip_code: "",
+      address: "",
       //form 10 fields
-      City: "",
+      city: "",
       Credit: "",
       //end
 
@@ -114,47 +116,54 @@ class App extends Component {
     //console.log(this.state);
   };
 
-  handleChange = (v) => {
-    this.setState({
-      postData: {
-        ...this.state.postData,
-        ownOrRent: v,
-      },
-    });
-  };
+ // handleChangePossesion = (v) => {
+  //   console.log(`Own: ${value}`)
+  //   this.setState({
+  //     postData: {
+  //       ...this.state.postData,
+  //       own_or_rent: value,
+  //     },
+      
+  //   });
+  //   console.log(`Own: ${this.state.postData.own_or_rent}`)
+
+ // };
 
   handleChangeYear = (value) => {
 
     this.setState({
       postData: {
         ...this.state.postData,
-        Year_Built: value,
+        year_house_was_built : value,
       },
     });
+    console.log(`Year: ${this.state.postData.year_house_was_built}`)
   };
 
   handleChangeType = (value) => {
     this.setState({
       postData: {
         ...this.state.postData,
-        Property_Type: value,
+        type_of_property: value,
       },
     });
+    console.log(`Type: ${this.state.postData.type_of_property}`)
   };
 
-  handleChangeSize = (value) => {
+  handleChangeSize = (value1) => {
     this.setState({
       postData: {
         ...this.state.postData,
-        Square_Footage: value,
+        size_in_square_feet: value1,
       },
     });
+    console.log(`Size: ${this.state.size_in_square_feet}`)
   };
   handleChangeStories = (value) => {
     this.setState({
       postData: {
         ...this.state.postData,
-        Stories: value,
+        number_of_stories: value,
       },
     });
   };
@@ -162,24 +171,27 @@ class App extends Component {
     this.setState({
       postData: {
         ...this.state.postData,
-        Currently_insured: value,
+        currently_insured: value,
       },
     });
+    console.log(`Company: ${this.state.currently_insured}`)
   };
-  handleChangeCompany = (value) => {
+  handleChangeCompany = (value1) => {
     this.setState({
       postData: {
         ...this.state.postData,
-        Current_Insurance_Company: value,
+        current_insurance_company: value1,
       },
+      
     });
+  
   };
 
   handleChangeClaims = (value) => {
     this.setState({
       postData: {
         ...this.state.postData,
-        Claims: value,
+        any_claims_over_last_3_years: value,
       },
     });
   };
@@ -192,28 +204,28 @@ class App extends Component {
     });
   };
 
-  handleChangeFirst_Name = (e) => {
+  handleChangefirst_name = (e) => {
     this.setState({
       postData: {
         ...this.state.postData,
-        First_Name: e.target.value,
+        first_name: e.target.value,
       },
     });
   };
-  handleChangeLast_Name = (e) => {
+  handleChangelast_name = (e) => {
     this.setState({
       postData: {
         ...this.state.postData,
-        Last_Name: e.target.value,
+        last_name: e.target.value,
       },
     });
   };
 
-  handleChangePrimary_Phone = (e) => {
+  handleChangephone_home = (e) => {
     this.setState({
       postData: {
         ...this.state.postData,
-        Primary_Phone: e.target.value,
+        phone_home: e.target.value,
       },
     });
   };
@@ -221,7 +233,7 @@ class App extends Component {
     this.setState({
       postData: {
         ...this.state.postData,
-        Email: e.target.value,
+        email_address: e.target.value,
       },
     });
   };
@@ -235,7 +247,7 @@ class App extends Component {
     this.setState({
       postData: {
         ...this.state.postData,
-        DOB: value,
+        dob: value,
       },
     });
   };
@@ -243,7 +255,7 @@ class App extends Component {
     this.setState({
       postData: {
         ...this.state.postData,
-        Gender: value,
+        gender: value,
       },
     });
   };
@@ -252,7 +264,7 @@ class App extends Component {
     this.setState({
       postData: {
         ...this.state.postData,
-        Zip: e.target.value,
+        zip_code: e.target.value,
       },
     });
   };
@@ -260,7 +272,7 @@ class App extends Component {
     this.setState({
       postData: {
         ...this.state.postData,
-        Address: e.target.value,
+        address: e.target.value,
       },
     });
   };
@@ -268,7 +280,7 @@ class App extends Component {
     this.setState({
       postData: {
         ...this.state.postData,
-        City: e.target.value,
+        city: e.target.value,
       },
     });
   };
@@ -311,54 +323,68 @@ class App extends Component {
             <div className="col">
               <StepWizard initialStep={1}>
                 <S1OwnOrRent
-                  ownOrRent={this.state.postData.ownOrRent}
+               //    postData={this.state.postData}
+                //  object={this.state.postData}
+               own_or_rent={this.state.postData.own_or_rent}
                   onChange={(v) => {
-                    this.handleChange(v);
+                  //  if(value!==""){
+                 //   this.handleChangePossesion(v);
+                   // }
+                   console.log(`Own: ${v}`)
                     this.setState({
+                      
                       postData: {
                         ...this.state.postData,
-                        LeadiD_Token: document.getElementById("leadid_token")
+                        own_or_rent:v,
+                        jornaya_lead_id: document.getElementById("jornaya_lead_id")
                           .value,
-                        Trusted_Form_URL: document.getElementById(
-                          "Trusted_Form_URL_0"
+                        trusted_form_cert_id: document.getElementById(
+                          "trusted_form_cert_id_0"
                         ).value,
                       },
                     });
-                    console.log(document.getElementById("Trusted_Form_URL_0"));
-                  }}
+                    console.log(`Own: ${this.state.postData.own_or_rent}`)
+                    console.log(document.getElementById("trusted_form_cert_id_0"));
+                   
+                  }
+                }
                 />
                 <S2HomeType
-                  Year_Built={this.state.postData.Year_Built}
-                  Property_Type={this.state.postData.Property_Type}
+                  year_house_was_built={this.state.postData.year_house_was_built}
+                  type_of_property={this.state.postData.type_of_property}
                   onChange={(value, value1) => {
                     if (value !== "") {
                       this.handleChangeYear(value);
+                      console.log(`post data: ${this.state.postData}`)
                     } else if (value1 !== "") {
                       this.handleChangeType(value1);
+                     
                     }
                   }}
                 />
                 <S3HouseSize
-                  Square_Footage={this.state.postData.Square_Footage}
-                  Stories={this.state.postData.Stories}
+                  size_in_square_feet={this.state.postData.	size_in_square_feet}
+                  number_of_stories={this.state.postData.number_of_stories}
                   onChange={(value, value1) => {
                     if (value !== "") {
                       this.handleChangeStories(value);
                     } else if (value1 !== "") {
                       this.handleChangeSize(value1);
+                     // console.log(`Step 3 : ${value1}`)
                     }
                   }}
                 />
                 <S4AboutInsurance
-                  Currently_insured={this.state.postData.Currently_insured}
-                  Current_Insurance_Company={
-                    this.state.postData.Current_Insurance_Company
+                  currently_insured={this.state.postData.currently_insured}
+                  current_insurance_company={
+                    this.state.postData.current_insurance_company
                   }
                   onChange={(value, value1) => {
                     if (value !== "") {
                       this.handleChangeInsured(value);
                     } else if (value1 !== "") {
                       this.handleChangeCompany(value1);
+                     // console.log(`COMPANY: ${value1}`)
                     }
                   }}
                 />
@@ -374,30 +400,30 @@ class App extends Component {
                   }}
                 />
                 <S6Personalnfo
-                  First_Name={this.state.postData.First_Name}
-                  Last_Name={this.state.postData.Last_Name}
+                  first_name={this.state.postData.first_name}
+                  last_name={this.state.postData.last_name}
                   onChange={(e, e1) => {
                     if (e !== "") {
-                      this.handleChangeFirst_Name(e);
+                      this.handleChangefirst_name(e);
                     } else if (e1 !== "") {
-                      this.handleChangeLast_Name(e1);
+                      this.handleChangelast_name(e1);
                     }
                   }}
                 />
                 <S7Personalnfo
-                  Primary_Phone={this.state.postData.Primary_Phone}
-                  Email={this.state.postData.Email}
+                  phone_home={this.state.postData.phone_home}
+                  email_address={this.state.postData.email_address}
                   onChange={(e, e1) => {
                     if (e !== "") {
-                      this.handleChangePrimary_Phone(e);
+                      this.handleChangephone_home(e);
                     } else if (e1 !== "") {
                       this.handleChangeEmail(e1);
                     }
                   }}
                 />
                 <S8Personalnfo
-                  DOB={this.state.postData.DOB}
-                  Gender={this.state.postData.Gender}
+                  dob={this.state.postData.dob}
+                  gender={this.state.postData.gender}
                   onChange={(e, value1) => {
                     if (e !== "") {
                       this.handleChangeDOB(e);
@@ -407,8 +433,8 @@ class App extends Component {
                   }}
                 />
                 <S9Personalnfo
-                  Zip={this.state.postData.Zip}
-                  Address={this.state.postData.Address}
+                  zip_code={this.state.postData.zip_code}
+                  address={this.state.postData.address}
                   onChange={(e, e1) => {
                     if (e !== "") {
                       this.handleChangeZip(e);
@@ -418,7 +444,8 @@ class App extends Component {
                   }}
                 />
                 <S10Personalnfo
-                  City={this.state.postData.City}
+             
+                  city={this.state.postData.city}
                   Credit={this.state.postData.Credit}
                   onChange={(e, value1) => {
                     if (e !== "") {
