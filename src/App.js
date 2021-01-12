@@ -35,7 +35,7 @@ class App extends Component {
       Sub_ID: 101,
       Pub_ID: 102,
       TCPA_Consent: "Yes",
-      state: "WA",
+      state: "NY",
       Occupancy: "Primary Residence",
       Garage: "Unknown",
       Foundation: "Unknown",
@@ -87,10 +87,10 @@ class App extends Component {
       number_of_stories: "",
       size_in_square_feet: "",
       //form 4 fields
-      currently_insured: "Yes",
+      currently_insured: "No",
       current_insurance_company: "",
       //form 5 fields
-      any_claims_over_last_3_years: "",
+      any_claims_over_last_3_years: "No",
       //howMany: "",
       //form 6 fields
       first_name: "",
@@ -195,11 +195,11 @@ class App extends Component {
       },
     });
   };
-  handleChangeHowMany = (value) => {
+  handleChangeHowMany = (value1) => {
     this.setState({
       postData: {
         ...this.state.postData,
-        howMany: value,
+        howMany: value1,
       },
     });
   };
@@ -380,22 +380,29 @@ class App extends Component {
                     this.state.postData.current_insurance_company
                   }
                   onChange={(value, value1) => {
-                    if (value !== "") {
+                    if(value=="Yes"){
                       this.handleChangeInsured(value);
-                    } else if (value1 !== "") {
+                      console.log(`Insured or not: ${value}`)
+                    }
+                   
+                      
+                  else if (value1 !== "") {
                       this.handleChangeCompany(value1);
                      // console.log(`COMPANY: ${value1}`)
                     }
-                  }}
+                  }
+                  }
                 />
                 <S5ClaimedAnything
                   claimedAnything={this.state.postData.claimedAnything}
                   howMany={this.state.postData.howMany}
                   onChange={(value, value1) => {
-                    if (value !== "") {
-                      //this.handleChangeHowMany(value);
-                    } else if (value1 !== "") {
-                      this.handleChangeClaims(value1);
+                    if(value == "Yes"){
+                      this.handleChangeClaims(value);
+                    }
+                     
+                   else  if (value1 !== "") {
+                      this.handleChangeHowMany(value1);
                     }
                   }}
                 />

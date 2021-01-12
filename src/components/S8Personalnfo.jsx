@@ -54,12 +54,13 @@ class S8Personalnfo extends Component {
               <h3>Personal Info</h3>
                 <br />
                 <h5>Date Of Birth</h5>
-              <Form.Item>
+              <Form.Item
+              >
                 {this.CreateDateOfBirthSelect()}
               </Form.Item>
               <h5>Gender</h5>
               <Form.Item
-                name="Gender"
+                name="gender"
                 hasFeedback
                 rules={[
                   {

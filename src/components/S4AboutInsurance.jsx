@@ -57,7 +57,9 @@ class S4AboutInsurance extends Component {
               <h3>Tell Me a Little Bit About Your Home Insurance</h3>
               <br />
               <h5>Are You Currently Insured?</h5>
-              <Form.Item>
+              <Form.Item
+              name="currently_insured"
+              >
                 <BootstrapSwitchButton
                   checked={this.props.currently_insured}
                   onlabel="Yes"
@@ -65,14 +67,14 @@ class S4AboutInsurance extends Component {
                   offlabel="No"
                   offstyle="secondary"
                   style=" ant-btn-lg ant-btn-block"
-                  onChange={(value) => {
-                    this.props.onChange(value?'Yes':'No', "");
+                  onChange={() => {
+                    this.props.onChange("Yes","");
                   }}
                 />
               </Form.Item>
               <h5>Current Insurance Company</h5>
               <Form.Item
-                name="stories"
+                name="current_insurance_company"
                 hasFeedback
                 rules={[
                   {

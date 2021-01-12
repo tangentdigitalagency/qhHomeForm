@@ -51,7 +51,9 @@ class S5ClaimedAnything extends Component {
               <h3>Almost There!</h3>
               <br />
               <h5>have You Claimed Anything Over The Past 3 years</h5>
-              <Form.Item>
+              <Form.Item
+              name="any_claims_over_last_3_years"
+              >
                 <BootstrapSwitchButton
                   checked={this.props.claimedAnything}
                   onlabel="Yes"
@@ -60,13 +62,13 @@ class S5ClaimedAnything extends Component {
                   offstyle="secondary"
                   style="ant-btn-lg ant-btn-block"
                   onChange={(value) => {
-                    this.props.onChange(value, "");
+                    this.props.onChange("Yes", "");
                   }}
                 />
               </Form.Item>
               <h5>If so, how many?</h5>
               <Form.Item
-                name="stories"
+                name="any_claims"
                 hasFeedback
                 rules={[
                   {

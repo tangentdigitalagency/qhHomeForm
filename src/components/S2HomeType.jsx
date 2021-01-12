@@ -29,7 +29,7 @@ class S2HomeType extends Component {
       "Duplex",
       "Mobile Home",
       "Multi Family",
-      "Single Family ",
+      "Single Family",
       "Town Home",
     ];
     const arr = [];

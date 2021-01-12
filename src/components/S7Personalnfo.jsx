@@ -41,7 +41,7 @@ class S7Personalnfo extends Component {
               <br />
               <h5>Phone Number</h5>
               <Form.Item
-                name="Phone"
+                name="phone_home"
                 hasFeedback
                 rules={[ 
                   {
@@ -70,7 +70,7 @@ class S7Personalnfo extends Component {
               <h5>Email</h5>
               <Form.Item
                 value={this.props.email_address}
-                name="Email"
+                name="email_address"
                 hasFeedback
                 rules={[
                   {

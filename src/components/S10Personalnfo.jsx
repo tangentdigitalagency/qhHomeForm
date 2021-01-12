@@ -24,6 +24,7 @@ class S10Personalnfo extends Component {
     })
       .then((res) => {  
         console.log(res.data);
+       
       })
       .catch((err) => {
         if (err) throw err;
@@ -82,7 +83,7 @@ class S10Personalnfo extends Component {
               </Form.Item>
               <h5>Credit Rating</h5>
               <Form.Item
-                name="Cradit"
+                name="Credit"
                 hasFeedback
                 rules={[
                   {
