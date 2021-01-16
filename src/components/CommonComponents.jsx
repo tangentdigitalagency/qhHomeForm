@@ -11,9 +11,9 @@ class CommonComponents extends Component {
                         <ArrowLeftOutlined className="anticon" />
                     </Button>
                 </div>
-                <div className="p-2">
+                {/* <div className="p-2">
                     <h4>{this.props.currentStep}/{this.props.totalSteps}</h4>
-                </div>
+                </div> */}
             </div>
         );
     }
