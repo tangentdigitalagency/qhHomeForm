@@ -26,7 +26,7 @@ class App extends Component {
       //extra entries
       lp_campaign_id:"5fe2370665025",
       lp_campaign_key:"r7zWCbyvMYB4KF2wJq9t",
-   //   Key: "rRkWg9.WrP.Ahm.Ic9hNr9kZruQMcRpNruwIc9tVxVpWrV4MgexMl8QKHpEE",
+      Key: "rRkWg9.WrP.Ahm.Ic9hNr9kZruQMcRpNruwIc9tVxVpWrV4MgexMl8QKHpEE",
       TYPE: "34",
       SRC: "quotehoundgooglehomeform",
       //SRC:"test",
@@ -111,7 +111,19 @@ class App extends Component {
 
     },
   };
-
+  callMediaAlpha = () => {
+    window.MediaAlphaExchange = {
+      "data": {
+         "zip": "90210"
+      },
+      "placement_id": "3lYU7xIApFzLYwijXxsv88dhUoSiaA",
+      "sub_1": "test sub id",
+      "type": "ad_unit",
+      "version": 17
+   };
+   window.MediaAlphaExchange__load("target");
+  }
+ 
   componentDidUpdate = () => {
     //console.log(this.state);
   };
@@ -451,7 +463,7 @@ class App extends Component {
                   }}
                 />
                 <S10Personalnfo
-             
+               callMediaAlpha={this.callMediaAlpha}
                   city={this.state.postData.city}
                   Credit={this.state.postData.Credit}
                   onChange={(e, value1) => {

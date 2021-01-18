@@ -11,6 +11,7 @@ class S10Personalnfo extends Component {
     console.log("Success:", values);
     
     this.props.nextStep();
+    this.props.callMediaAlpha();
   };
 
   onFinishFailed = (errorInfo) => {
