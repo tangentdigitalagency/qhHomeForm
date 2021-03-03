@@ -1,10 +1,9 @@
 import React, { Component } from "react";
 import { Form, Input, Button } from "antd";
 import CommonComponents from "./CommonComponents";
+import { Link } from "react-router-dom";
 
-class S6Personalnfo extends Component { 
-  
-
+class S6Personalnfo extends Component {
   onFinish = (values) => {
     this.props.nextStep();
     console.log("Success:", values);
@@ -17,11 +16,13 @@ class S6Personalnfo extends Component {
   render() {
     return (
       <div className="card shadow-lg" style={{ borderRadius: "25px" }}>
-        <CommonComponents
-          currentStep={this.props.currentStep}
-          totalSteps={this.props.totalSteps}
-          previousStep={this.props.previousStep}
-        />
+        <Link to="/step5">
+          <CommonComponents
+            currentStep={this.props.currentStep}
+            totalSteps={this.props.totalSteps}
+            previousStep={this.props.previousStep}
+          />
+        </Link>
         <div className="d-flex" style={{ minHeight: "50vh" }}>
           <div
             className="card-body d-xl-flex justify-content-center align-items-center"
@@ -33,7 +34,7 @@ class S6Personalnfo extends Component {
               onFinish={this.onFinish}
               initialValues={{
                 first_name: this.props.first_name,
-                last_name: this.props.last_name
+                last_name: this.props.last_name,
               }}
               onFinishFailed={this.onFinishFailed}
             >
@@ -49,11 +50,12 @@ class S6Personalnfo extends Component {
                     message: "Please Enter Your First Name",
                   },
                   {
-                      max:100, message:'Max Length Of First Name Is 100 Characters'
-                  }
+                    max: 100,
+                    message: "Max Length Of First Name Is 100 Characters",
+                  },
                 ]}
               >
-                <Input  
+                <Input
                   onChange={(e) => {
                     this.props.onChange(e, "");
                   }}
@@ -71,11 +73,12 @@ class S6Personalnfo extends Component {
                     message: "Please Enter Your Last Name",
                   },
                   {
-                    max:100, message:'Max Length Of Last Name Is 100 Characters'
-                }
+                    max: 100,
+                    message: "Max Length Of Last Name Is 100 Characters",
+                  },
                 ]}
               >
-                <Input 
+                <Input
                   onChange={(e) => {
                     this.props.onChange("", e);
                   }}
@@ -84,9 +87,12 @@ class S6Personalnfo extends Component {
                 />
               </Form.Item>
               <Form.Item>
-                <Button type="primary" htmlType="submit" block size="large">
-                  Next
-                </Button>
+                <Link to="/step7">
+                  {" "}
+                  <Button type="primary" htmlType="submit" block size="large">
+                    Next
+                  </Button>
+                </Link>
               </Form.Item>
             </Form>
           </div>

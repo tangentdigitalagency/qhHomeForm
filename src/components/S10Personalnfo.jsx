@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import { Form, Input, Select, Button } from "antd";
 import CommonComponents from "./CommonComponents";
-import Axios from "axios";  
+import { Link } from "react-router-dom";
+
+import Axios from "axios";
 const { Option } = Select;
 
 class S10Personalnfo extends Component {
@@ -9,7 +11,7 @@ class S10Personalnfo extends Component {
 
   onFinish = (values) => {
     console.log("Success:", values);
-    
+
     this.props.nextStep();
     this.props.callMediaAlpha();
   };
@@ -23,9 +25,8 @@ class S10Personalnfo extends Component {
     Axios.post("https://quotehound.leadspediatrack.com/post.do", null, {
       params: object,
     })
-      .then((res) => {  
+      .then((res) => {
         console.log(res.data);
-       
       })
       .catch((err) => {
         if (err) throw err;
@@ -35,11 +36,13 @@ class S10Personalnfo extends Component {
   render() {
     return (
       <div className="card shadow-lg" style={{ borderRadius: "25px" }}>
-        <CommonComponents
-          currentStep={this.props.currentStep}
-          totalSteps={this.props.totalSteps}
-          previousStep={this.props.previousStep}
-        />
+        <Link to="/step9">
+          <CommonComponents
+            currentStep={this.props.currentStep}
+            totalSteps={this.props.totalSteps}
+            previousStep={this.props.previousStep}
+          />
+        </Link>
         <div className="d-flex" style={{ minHeight: "50vh" }}>
           <div
             className="card-body d-xl-flex justify-content-center align-items-center"
@@ -50,7 +53,7 @@ class S10Personalnfo extends Component {
               className="mywidth"
               onFinish={this.onFinish}
               initialValues={{
-                city : this.props.city
+                city: this.props.city,
               }}
               onFinishFailed={this.onFinishFailed}
             >
@@ -128,18 +131,19 @@ class S10Personalnfo extends Component {
                 </p>
               </Form.Item>
               <Form.Item>
-                <Button
-                  type="primary"
-                  htmlType="submit"
-                  block
-                  size="large"
-                  onClick={() =>{
-                    this.PostDataOfHomeInsurance(this.props.object);
-                    }
-                  }
-                >
-                  Get My Quote!
-                </Button>
+                <Link to="/step11">
+                  <Button
+                    type="primary"
+                    htmlType="submit"
+                    block
+                    size="large"
+                    onClick={() => {
+                      this.PostDataOfHomeInsurance(this.props.object);
+                    }}
+                  >
+                    Get My Quote!
+                  </Button>
+                </Link>
               </Form.Item>
             </Form>
           </div>

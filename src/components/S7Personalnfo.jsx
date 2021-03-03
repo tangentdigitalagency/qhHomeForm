@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Form, Input, Button } from "antd";
 import CommonComponents from "./CommonComponents";
+import { Link } from "react-router-dom";
 
 class S7Personalnfo extends Component {
   state = {};
@@ -17,11 +18,13 @@ class S7Personalnfo extends Component {
   render() {
     return (
       <div className="card shadow-lg" style={{ borderRadius: "25px" }}>
-        <CommonComponents
-          currentStep={this.props.currentStep}
-          totalSteps={this.props.totalSteps}
-          previousStep={this.props.previousStep}
-        />
+        <Link to="/step6">
+          <CommonComponents
+            currentStep={this.props.currentStep}
+            totalSteps={this.props.totalSteps}
+            previousStep={this.props.previousStep}
+          />
+        </Link>
         <div className="d-flex" style={{ minHeight: "50vh" }}>
           <div
             className="card-body d-xl-flex justify-content-center align-items-center"
@@ -33,7 +36,7 @@ class S7Personalnfo extends Component {
               onFinish={this.onFinish}
               initialValues={{
                 Phone: this.props.phone_home,
-                email_address: this.props.email_address
+                email_address: this.props.email_address,
               }}
               onFinishFailed={this.onFinishFailed}
             >
@@ -43,7 +46,7 @@ class S7Personalnfo extends Component {
               <Form.Item
                 name="phone_home"
                 hasFeedback
-                rules={[ 
+                rules={[
                   {
                     required: true,
                     message: "Please Enter Your phone number !",
@@ -51,13 +54,14 @@ class S7Personalnfo extends Component {
                   {
                     max: 10,
                     message: "Please Enter A Correct Phone Number",
-                  },{
+                  },
+                  {
                     min: 10,
                     message: "Please Enter A Correct Phone Number",
-                  }
+                  },
                 ]}
               >
-                <Input 
+                <Input
                   defaultValue={this.props.phone_home}
                   type="number"
                   onChange={(value) => {
@@ -93,9 +97,12 @@ class S7Personalnfo extends Component {
                 />
               </Form.Item>
               <Form.Item>
-                <Button type="primary" htmlType="submit" block size="large">
-                  Next
-                </Button>
+                <Link to="/step8">
+                  {" "}
+                  <Button type="primary" htmlType="submit" block size="large">
+                    Next
+                  </Button>
+                </Link>
               </Form.Item>
             </Form>
           </div>

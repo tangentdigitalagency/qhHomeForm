@@ -1,25 +1,22 @@
-import React, { Component } from "react"; 
+import React, { Component } from "react";
 import { Form, Button, Select, Input } from "antd";
-import CommonComponents from "./CommonComponents"; 
+import CommonComponents from "./CommonComponents";
+import { Link } from "react-router-dom";
 const { Option } = Select;
 class S8Personalnfo extends Component {
   state = {};
 
-
-
-
-
   CreateDateOfBirthSelect = () => {
-    return ( 
+    return (
       <Input
-          onChange={(e)=>this.props.onChange(e,'')}
-          className="w-100 text-center"
-          align="center"
-          size="large" 
-          maxLength={10}
-          placeholder="MM/DD/YYYY"
-          value={this.props.dob}
-        /> 
+        onChange={(e) => this.props.onChange(e, "")}
+        className="w-100 text-center"
+        align="center"
+        size="large"
+        maxLength={10}
+        placeholder="MM/DD/YYYY"
+        value={this.props.dob}
+      />
     );
   };
 
@@ -34,12 +31,14 @@ class S8Personalnfo extends Component {
 
   render() {
     return (
-      <div className="card shadow-lg" style={{ borderRadius: "25px"}}>
-        <CommonComponents
-          currentStep={this.props.currentStep}
-          totalSteps={this.props.totalSteps}
-          previousStep={this.props.previousStep}
-        />
+      <div className="card shadow-lg" style={{ borderRadius: "25px" }}>
+        <Link to="/step7">
+          <CommonComponents
+            currentStep={this.props.currentStep}
+            totalSteps={this.props.totalSteps}
+            previousStep={this.props.previousStep}
+          />
+        </Link>
         <div className="d-flex" style={{ minHeight: "50vh" }}>
           <div
             className="card-body d-xl-flex justify-content-center align-items-center"
@@ -52,12 +51,9 @@ class S8Personalnfo extends Component {
               onFinishFailed={this.onFinishFailed}
             >
               <h3>Personal Info</h3>
-                <br />
-                <h5>Date Of Birth</h5>
-              <Form.Item
-              >
-                {this.CreateDateOfBirthSelect()}
-              </Form.Item>
+              <br />
+              <h5>Date Of Birth</h5>
+              <Form.Item>{this.CreateDateOfBirthSelect()}</Form.Item>
               <h5>Gender</h5>
               <Form.Item
                 name="gender"
@@ -67,9 +63,8 @@ class S8Personalnfo extends Component {
                     required: true,
                     message: "Please Select An Option!",
                   },
-                ]}>
-                
-
+                ]}
+              >
                 <Select
                   onChange={(value) => {
                     this.props.onChange("", value);
@@ -83,14 +78,12 @@ class S8Personalnfo extends Component {
                 </Select>
               </Form.Item>
               <Form.Item>
-                <Button 
-                  type="primary"
-                  htmlType="submit"
-                  block
-                  size="large"
-                >
-                  Next
-                </Button>
+                <Link to="/step9">
+                  {" "}
+                  <Button type="primary" htmlType="submit" block size="large">
+                    Next
+                  </Button>
+                </Link>
               </Form.Item>
             </Form>
           </div>

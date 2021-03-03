@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Form, Input, Button } from "antd";
 import CommonComponents from "./CommonComponents";
+import { Link } from "react-router-dom";
 
 class S9Personalnfo extends Component {
   state = {};
@@ -16,11 +17,13 @@ class S9Personalnfo extends Component {
   render() {
     return (
       <div className="card shadow-lg" style={{ borderRadius: "25px" }}>
-        <CommonComponents
-          currentStep={this.props.currentStep}
-          totalSteps={this.props.totalSteps}
-          previousStep={this.props.previousStep}
-        />
+        <Link to="/step8">
+          <CommonComponents
+            currentStep={this.props.currentStep}
+            totalSteps={this.props.totalSteps}
+            previousStep={this.props.previousStep}
+          />
+        </Link>
         <div className="d-flex" style={{ minHeight: "50vh" }}>
           <div
             className="card-body d-xl-flex justify-content-center align-items-center"
@@ -32,7 +35,7 @@ class S9Personalnfo extends Component {
               onFinish={this.onFinish}
               initialValues={{
                 zip_code: this.props.zip_code,
-                address: this.props.address
+                address: this.props.address,
               }}
               onFinishFailed={this.onFinishFailed}
             >
@@ -57,7 +60,7 @@ class S9Personalnfo extends Component {
                   },
                 ]}
               >
-                <Input  
+                <Input
                   onChange={(value) => {
                     this.props.onChange(value, "");
                   }}
@@ -80,7 +83,7 @@ class S9Personalnfo extends Component {
                   },
                 ]}
               >
-                <Input 
+                <Input
                   onChange={(value) => {
                     this.props.onChange("", value);
                   }}
@@ -89,9 +92,12 @@ class S9Personalnfo extends Component {
                 />
               </Form.Item>
               <Form.Item>
-                <Button type="primary" htmlType="submit" block size="large">
-                  Next
-                </Button>
+                <Link to="/step10">
+                  {" "}
+                  <Button type="primary" htmlType="submit" block size="large">
+                    Next
+                  </Button>
+                </Link>
               </Form.Item>
             </Form>
           </div>

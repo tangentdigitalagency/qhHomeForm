@@ -1,13 +1,14 @@
 import React, { Component } from "react";
 import { Form, Select, Button } from "antd";
 import CommonComponents from "./CommonComponents";
+import { Link } from "react-router-dom";
 const { Option } = Select;
 class S3HouseSize extends Component {
   state = {};
 
   CreateHomeSizeSelect = () => {
     let i = 0;
-    
+
     const arr = [];
     for (i = 500; i <= 5200; i += 100) {
       arr.push(
@@ -21,10 +22,14 @@ class S3HouseSize extends Component {
 
   CreateNumberOfStoriesSelect = () => {
     const arr = [];
-    const storiesValues=['1','1.5','2','3','4','Bi-Level','Tri-Level'];
+    const storiesValues = ["1", "1.5", "2", "3", "4", "Bi-Level", "Tri-Level"];
     for (let j = 0; j < storiesValues.length; j++) {
       arr.push(
-        <Option className="p-0 text-center" key={storiesValues[j]} value={storiesValues[j]}>
+        <Option
+          className="p-0 text-center"
+          key={storiesValues[j]}
+          value={storiesValues[j]}
+        >
           {storiesValues[j]}
         </Option>
       );
@@ -44,11 +49,13 @@ class S3HouseSize extends Component {
   render() {
     return (
       <div className="card shadow-lg" style={{ borderRadius: "25px" }}>
-        <CommonComponents
-          currentStep={this.props.currentStep}
-          totalSteps={this.props.totalSteps}
-          previousStep={this.props.previousStep}
-        />
+        <Link to="/step2">
+          <CommonComponents
+            currentStep={this.props.currentStep}
+            totalSteps={this.props.totalSteps}
+            previousStep={this.props.previousStep}
+          />
+        </Link>
         <div className=" d-flex" style={{ minHeight: "50vh" }}>
           <div
             className=" card-body d-xl-flex justify-content-center align-items-center"
@@ -74,7 +81,7 @@ class S3HouseSize extends Component {
                 ]}
               >
                 <Select
-                //defaultValue={this.props.Stories}
+                  //defaultValue={this.props.Stories}
                   size="large"
                   placeholder="Number Of Stories"
                   onChange={(value) => {
@@ -91,10 +98,7 @@ class S3HouseSize extends Component {
                 </Select>
               </Form.Item>
               <h5>Size In Square Feet</h5>
-              <Form.Item
-               name="size_in_square_feet"
-              >
-                
+              <Form.Item name="size_in_square_feet">
                 <Select
                   //defaultValue={this.props.Square_Footage}
                   size="large"
@@ -113,9 +117,12 @@ class S3HouseSize extends Component {
                 </Select>
               </Form.Item>
               <Form.Item>
-                <Button type="primary" htmlType="submit" block size="large">
-                  Next
-                </Button>
+                <Link to="/step4">
+                  {" "}
+                  <Button type="primary" htmlType="submit" block size="large">
+                    Next
+                  </Button>
+                </Link>
               </Form.Item>
             </Form>
           </div>

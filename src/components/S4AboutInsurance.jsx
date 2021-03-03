@@ -3,6 +3,7 @@ import { Form, Select, Button } from "antd";
 import CommonComponents from "./CommonComponents";
 import BootstrapSwitchButton from "bootstrap-switch-button-react";
 import CompanyNameList from "../CompanyNameList";
+import { Link } from "react-router-dom";
 const { Option } = Select;
 
 class S4AboutInsurance extends Component {
@@ -10,7 +11,7 @@ class S4AboutInsurance extends Component {
 
   CreateCompanyNameSelect = () => {
     let i = 0;
-   const companyName = CompanyNameList;
+    const companyName = CompanyNameList;
     const arr = [];
     for (i = 0; i < companyName.length; i++) {
       arr.push(
@@ -38,11 +39,13 @@ class S4AboutInsurance extends Component {
   render() {
     return (
       <div className="card shadow-lg" style={{ borderRadius: "25px" }}>
-        <CommonComponents
-          currentStep={this.props.currentStep}
-          totalSteps={this.props.totalSteps}
-          previousStep={this.props.previousStep}
-        />
+        <Link to="/step3">
+          <CommonComponents
+            currentStep={this.props.currentStep}
+            totalSteps={this.props.totalSteps}
+            previousStep={this.props.previousStep}
+          />
+        </Link>
         <div className=" d-xl-flex d-sm-flex" style={{ minHeight: "50vh" }}>
           <div
             className=" card-body d-xl-flex justify-content-center align-items-center"
@@ -57,9 +60,7 @@ class S4AboutInsurance extends Component {
               <h3>Tell Me a Little Bit About Your Home Insurance</h3>
               <br />
               <h5>Are You Currently Insured?</h5>
-              <Form.Item
-              name="currently_insured"
-              >
+              <Form.Item name="currently_insured">
                 <BootstrapSwitchButton
                   checked={this.props.currently_insured}
                   onlabel="Yes"
@@ -68,7 +69,7 @@ class S4AboutInsurance extends Component {
                   offstyle="secondary"
                   style=" ant-btn-lg ant-btn-block"
                   onChange={() => {
-                    this.props.onChange("Yes","");
+                    this.props.onChange("Yes", "");
                   }}
                 />
               </Form.Item>
@@ -100,9 +101,12 @@ class S4AboutInsurance extends Component {
                 </Select>
               </Form.Item>
               <Form.Item>
-                <Button type="primary" htmlType="submit" block size="large">
-                  Next
-                </Button>
+                <Link to="/step5">
+                  {" "}
+                  <Button type="primary" htmlType="submit" block size="large">
+                    Next
+                  </Button>
+                </Link>
               </Form.Item>
             </Form>
           </div>

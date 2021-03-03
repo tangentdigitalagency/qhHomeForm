@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Form, Select, Button } from "antd";
 import CommonComponents from "./CommonComponents";
+import { Link } from "react-router-dom";
 const { Option } = Select;
 class S2HomeType extends Component {
   state = {
@@ -52,14 +53,24 @@ class S2HomeType extends Component {
     console.log("Failed:", errorInfo);
   };
 
+  // checkDisable = async () => {
+  //   let { field1 } = this.state;
+  //   if (field1 == null || field1 == "" || field2 == null || field2 == "")
+  //     return false;
+  //   else return true;
+  // };
+
   render() {
     return (
-      <div className="card shadow-lg" style={{ borderRadius: "25px"}}>
-        <CommonComponents
-          currentStep={this.props.currentStep}
-          totalSteps={this.props.totalSteps}
-          previousStep={this.props.previousStep}
-        />
+      <div className="card shadow-lg" style={{ borderRadius: "25px" }}>
+        <Link to="/">
+          <CommonComponents
+            currentStep={this.props.currentStep}
+            totalSteps={this.props.totalSteps}
+            previousStep={this.props.previousStep}
+          />
+        </Link>
+
         <div className=" d-flex" style={{ minHeight: "50vh" }}>
           <div
             className="card-body  d-xl-flex justify-content-center align-items-center"
@@ -85,7 +96,6 @@ class S2HomeType extends Component {
                 ]}
               >
                 <Select
-                
                   //defaultValue={this.props.Year_Built}
                   size="large"
                   placeholder="House Built Years"
@@ -129,9 +139,12 @@ class S2HomeType extends Component {
                 </Select>
               </Form.Item>
               <Form.Item>
-                <Button type="primary" htmlType="submit" block size="large">
-                  Next
-                </Button>
+                <Link to="/step3">
+                  {" "}
+                  <Button type="primary" htmlType="submit" block size="large">
+                    Next
+                  </Button>
+                </Link>
               </Form.Item>
             </Form>
           </div>

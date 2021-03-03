@@ -5,8 +5,8 @@ import "antd/dist/antd.css";
 import "./App.css";
 import Grid from "@material-ui/core/Grid";
 import Logo from "./Assets/logo.png";
-import {Button, Typography } from "antd";
-
+import { Button, Typography } from "antd";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import S1OwnOrRent from "./components/S1OwnOrRent";
 import S2HomeType from "./components/S2HomeType";
 import StepWizard from "react-step-wizard";
@@ -18,14 +18,14 @@ import S7Personalnfo from "./components/S7Personalnfo";
 import S8Personalnfo from "./components/S8Personalnfo";
 import S9Personalnfo from "./components/S9Personalnfo";
 import S10Personalnfo from "./components/S10Personalnfo";
-import {PhoneOutlined } from "@ant-design/icons"
+import { PhoneOutlined } from "@ant-design/icons";
 import S11Final from "./components/S11Final";
 class App extends Component {
   state = {
     postData: {
       //extra entries
-      lp_campaign_id:"5fe2370665025",
-      lp_campaign_key:"r7zWCbyvMYB4KF2wJq9t",
+      lp_campaign_id: "5fe2370665025",
+      lp_campaign_key: "r7zWCbyvMYB4KF2wJq9t",
       Key: "rRkWg9.WrP.Ahm.Ic9hNr9kZruQMcRpNruwIc9tVxVpWrV4MgexMl8QKHpEE",
       TYPE: "34",
       SRC: "quotehoundgooglehomeform",
@@ -64,19 +64,19 @@ class App extends Component {
       //Total_Premium:'',
       //Sold_Tier:'',
       //Quoted_Carrrier:'',
-      //Age:'', 
+      //Age:'',
       //Insured_Since:'',
       //Policy_Expiration:'',
       //Exterior_Walls:'',
       //Smoke_Alarm:'',
       //Indoor_Sprinklers:'',
-      //Central_Air_Conditioning:'',  
+      //Central_Air_Conditioning:'',
       //Years_At_Current_Residence:'',
       //Years_At_Previous_Residence:'',
 
-      //start 
+      //start
       // form 1 field
-     own_or_rent: "",
+      own_or_rent: "",
       // from script
       trusted_form_cert_id: "",
       jornaya_lead_id: "",
@@ -108,48 +108,46 @@ class App extends Component {
       city: "",
       Credit: "",
       //end
-
     },
   };
   callMediaAlpha = () => {
     window.MediaAlphaExchange = {
-      "data": {
-         "zip": "90210"
+      data: {
+        zip: "90210",
       },
-      "placement_id": "3lYU7xIApFzLYwijXxsv88dhUoSiaA",
-      "sub_1": "test sub id",
-      "type": "ad_unit",
-      "version": 17
-   };
-   window.MediaAlphaExchange__load("target");
-  }
- 
+      placement_id: "3lYU7xIApFzLYwijXxsv88dhUoSiaA",
+      sub_1: "test sub id",
+      type: "ad_unit",
+      version: 17,
+    };
+    window.MediaAlphaExchange__load("target");
+  };
+
   componentDidUpdate = () => {
     //console.log(this.state);
   };
 
- // handleChangePossesion = (v) => {
+  // handleChangePossesion = (v) => {
   //   console.log(`Own: ${value}`)
   //   this.setState({
   //     postData: {
   //       ...this.state.postData,
   //       own_or_rent: value,
   //     },
-      
+
   //   });
   //   console.log(`Own: ${this.state.postData.own_or_rent}`)
 
- // };
+  // };
 
   handleChangeYear = (value) => {
-
     this.setState({
       postData: {
         ...this.state.postData,
-        year_house_was_built : value,
+        year_house_was_built: value,
       },
     });
-    console.log(`Year: ${this.state.postData.year_house_was_built}`)
+    console.log(`Year: ${this.state.postData.year_house_was_built}`);
   };
 
   handleChangeType = (value) => {
@@ -159,7 +157,7 @@ class App extends Component {
         type_of_property: value,
       },
     });
-    console.log(`Type: ${this.state.postData.type_of_property}`)
+    console.log(`Type: ${this.state.postData.type_of_property}`);
   };
 
   handleChangeSize = (value1) => {
@@ -169,7 +167,7 @@ class App extends Component {
         size_in_square_feet: value1,
       },
     });
-    console.log(`Size: ${this.state.size_in_square_feet}`)
+    console.log(`Size: ${this.state.size_in_square_feet}`);
   };
   handleChangeStories = (value) => {
     this.setState({
@@ -186,7 +184,7 @@ class App extends Component {
         currently_insured: value,
       },
     });
-    console.log(`Company: ${this.state.currently_insured}`)
+    console.log(`Company: ${this.state.currently_insured}`);
   };
   handleChangeCompany = (value1) => {
     this.setState({
@@ -194,9 +192,7 @@ class App extends Component {
         ...this.state.postData,
         current_insurance_company: value1,
       },
-      
     });
-  
   };
 
   handleChangeClaims = (value) => {
@@ -315,74 +311,253 @@ class App extends Component {
           overflow: "hidden",
         }}
       >
-        <nav class="navbar navbar-light "><div class="container">
-          <ul class="nav  nav-fill mx-2 w-sm-100">
-            <li class="nav-item">
-              <img src={Logo} class="mx-2 my-4" width="150px" alt="" />
-            </li>
-          </ul>
-          <ul class="nav  nav-fill mx-2 w-sm-100">
-            <li class="nav-item">
-              <Button type="primary" size="middle" icon={<PhoneOutlined rotate="90" />}  onClick={(e) => {e.preventDefault(); window.location.href='tel:8556226620'; }} >
-              (855) 622-6620
-              </Button>
-            </li>
-          </ul>
-        </div>
+        <nav class="navbar navbar-light ">
+          <div class="container">
+            <ul class="nav  nav-fill mx-2 w-sm-100">
+              <li class="nav-item">
+                <img src={Logo} class="mx-2 my-4" width="150px" alt="" />
+              </li>
+            </ul>
+            <ul class="nav  nav-fill mx-2 w-sm-100">
+              <li class="nav-item">
+                <Button
+                  type="primary"
+                  size="middle"
+                  icon={<PhoneOutlined rotate="90" />}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    window.location.href = "tel:8556226620";
+                  }}
+                >
+                  (855) 622-6620
+                </Button>
+              </li>
+            </ul>
+          </div>
         </nav>
         <div className="container">
           <div className="row">
             <div className="col">
-              <StepWizard initialStep={1}>
+              <Router>
+                <Switch>
+                  <Route exact path="/">
+                    <S1OwnOrRent
+                      //    postData={this.state.postData}
+                      //  object={this.state.postData}
+                      own_or_rent={this.state.postData.own_or_rent}
+                      onChange={(v) => {
+                        //  if(value!==""){
+                        //   this.handleChangePossesion(v);
+                        // }
+                        console.log(`Own: ${v}`);
+                        this.setState({
+                          postData: {
+                            ...this.state.postData,
+                            own_or_rent: v,
+                            jornaya_lead_id: document.getElementById(
+                              "jornaya_lead_id"
+                            ).value,
+                            trusted_form_cert_id: document.getElementById(
+                              "trusted_form_cert_id_0"
+                            ).value,
+                          },
+                        });
+                        console.log(`Own: ${this.state.postData.own_or_rent}`);
+                        console.log(
+                          document.getElementById("trusted_form_cert_id_0")
+                        );
+                      }}
+                    />
+                  </Route>
+                  <Route exact path="/step2">
+                    {" "}
+                    <S2HomeType
+                      year_house_was_built={
+                        this.state.postData.year_house_was_built
+                      }
+                      type_of_property={this.state.postData.type_of_property}
+                      onChange={(value, value1) => {
+                        if (value !== "") {
+                          this.handleChangeYear(value);
+                          console.log(`post data: ${this.state.postData}`);
+                        } else if (value1 !== "") {
+                          this.handleChangeType(value1);
+                        }
+                      }}
+                    />
+                  </Route>
+                  <Route exact path="/step3">
+                    <S3HouseSize
+                      size_in_square_feet={
+                        this.state.postData.size_in_square_feet
+                      }
+                      number_of_stories={this.state.postData.number_of_stories}
+                      onChange={(value, value1) => {
+                        if (value !== "") {
+                          this.handleChangeStories(value);
+                        } else if (value1 !== "") {
+                          this.handleChangeSize(value1);
+                          // console.log(`Step 3 : ${value1}`)
+                        }
+                      }}
+                    />
+                  </Route>
+                  <Route exact path="/step4">
+                    <S4AboutInsurance
+                      currently_insured={this.state.postData.currently_insured}
+                      current_insurance_company={
+                        this.state.postData.current_insurance_company
+                      }
+                      onChange={(value, value1) => {
+                        if (value == "Yes") {
+                          this.handleChangeInsured(value);
+                          console.log(`Insured or not: ${value}`);
+                        } else if (value1 !== "") {
+                          this.handleChangeCompany(value1);
+                          // console.log(`COMPANY: ${value1}`)
+                        }
+                      }}
+                    />
+                  </Route>
+                  <Route exact path="/step5">
+                    <S5ClaimedAnything
+                      claimedAnything={this.state.postData.claimedAnything}
+                      howMany={this.state.postData.howMany}
+                      onChange={(value, value1) => {
+                        if (value == "Yes") {
+                          this.handleChangeClaims(value);
+                        } else if (value1 !== "") {
+                          this.handleChangeHowMany(value1);
+                        }
+                      }}
+                    />
+                  </Route>
+                  <Route exact path="/step6">
+                    {" "}
+                    <S6Personalnfo
+                      first_name={this.state.postData.first_name}
+                      last_name={this.state.postData.last_name}
+                      onChange={(e, e1) => {
+                        if (e !== "") {
+                          this.handleChangefirst_name(e);
+                        } else if (e1 !== "") {
+                          this.handleChangelast_name(e1);
+                        }
+                      }}
+                    />
+                  </Route>
+                  <Route exact path="/step7">
+                    <S7Personalnfo
+                      phone_home={this.state.postData.phone_home}
+                      email_address={this.state.postData.email_address}
+                      onChange={(e, e1) => {
+                        if (e !== "") {
+                          this.handleChangephone_home(e);
+                        } else if (e1 !== "") {
+                          this.handleChangeEmail(e1);
+                        }
+                      }}
+                    />
+                  </Route>
+                  <Route exact path="/step8">
+                    {" "}
+                    <S8Personalnfo
+                      dob={this.state.postData.dob}
+                      gender={this.state.postData.gender}
+                      onChange={(e, value1) => {
+                        if (e !== "") {
+                          this.handleChangeDOB(e);
+                        } else if (value1 !== "") {
+                          this.handleChangeGender(value1);
+                        }
+                      }}
+                    />
+                  </Route>
+
+                  <Route exact path="/step9">
+                    <S9Personalnfo
+                      zip_code={this.state.postData.zip_code}
+                      address={this.state.postData.address}
+                      onChange={(e, e1) => {
+                        if (e !== "") {
+                          this.handleChangeZip(e);
+                        } else if (e1 !== "") {
+                          this.handleChangeAddress(e1);
+                        }
+                      }}
+                    />
+                  </Route>
+                  <Route exact path="/step10">
+                    <S10Personalnfo
+                      callMediaAlpha={this.callMediaAlpha}
+                      city={this.state.postData.city}
+                      Credit={this.state.postData.Credit}
+                      onChange={(e, value1) => {
+                        if (e !== "") {
+                          this.handleChangeCity(e);
+                        } else if (value1 !== "") {
+                          this.handleChangeCredit(value1);
+                        }
+                      }}
+                      object={this.state.postData}
+                    />
+                  </Route>
+                  <Route exact path="/step11">
+                    <S11Final postData2={this.state.postData} />
+                  </Route>
+                </Switch>
+              </Router>
+              {/*} <StepWizard initialStep={1}>
                 <S1OwnOrRent
-               //    postData={this.state.postData}
-                //  object={this.state.postData}
-               own_or_rent={this.state.postData.own_or_rent}
+                  //    postData={this.state.postData}
+                  //  object={this.state.postData}
+                  own_or_rent={this.state.postData.own_or_rent}
                   onChange={(v) => {
-                  //  if(value!==""){
-                 //   this.handleChangePossesion(v);
-                   // }
-                   console.log(`Own: ${v}`)
+                    //  if(value!==""){
+                    //   this.handleChangePossesion(v);
+                    // }
+                    console.log(`Own: ${v}`);
                     this.setState({
-                      
                       postData: {
                         ...this.state.postData,
-                        own_or_rent:v,
-                        jornaya_lead_id: document.getElementById("jornaya_lead_id")
-                          .value,
+                        own_or_rent: v,
+                        jornaya_lead_id: document.getElementById(
+                          "jornaya_lead_id"
+                        ).value,
                         trusted_form_cert_id: document.getElementById(
                           "trusted_form_cert_id_0"
                         ).value,
                       },
                     });
-                    console.log(`Own: ${this.state.postData.own_or_rent}`)
-                    console.log(document.getElementById("trusted_form_cert_id_0"));
-                   
-                  }
-                }
+                    console.log(`Own: ${this.state.postData.own_or_rent}`);
+                    console.log(
+                      document.getElementById("trusted_form_cert_id_0")
+                    );
+                  }}
                 />
                 <S2HomeType
-                  year_house_was_built={this.state.postData.year_house_was_built}
+                  year_house_was_built={
+                    this.state.postData.year_house_was_built
+                  }
                   type_of_property={this.state.postData.type_of_property}
                   onChange={(value, value1) => {
                     if (value !== "") {
                       this.handleChangeYear(value);
-                      console.log(`post data: ${this.state.postData}`)
+                      console.log(`post data: ${this.state.postData}`);
                     } else if (value1 !== "") {
                       this.handleChangeType(value1);
-                     
                     }
                   }}
                 />
                 <S3HouseSize
-                  size_in_square_feet={this.state.postData.	size_in_square_feet}
+                  size_in_square_feet={this.state.postData.size_in_square_feet}
                   number_of_stories={this.state.postData.number_of_stories}
                   onChange={(value, value1) => {
                     if (value !== "") {
                       this.handleChangeStories(value);
                     } else if (value1 !== "") {
                       this.handleChangeSize(value1);
-                     // console.log(`Step 3 : ${value1}`)
+                      // console.log(`Step 3 : ${value1}`)
                     }
                   }}
                 />
@@ -392,28 +567,22 @@ class App extends Component {
                     this.state.postData.current_insurance_company
                   }
                   onChange={(value, value1) => {
-                    if(value=="Yes"){
+                    if (value == "Yes") {
                       this.handleChangeInsured(value);
-                      console.log(`Insured or not: ${value}`)
-                    }
-                   
-                      
-                  else if (value1 !== "") {
+                      console.log(`Insured or not: ${value}`);
+                    } else if (value1 !== "") {
                       this.handleChangeCompany(value1);
-                     // console.log(`COMPANY: ${value1}`)
+                      // console.log(`COMPANY: ${value1}`)
                     }
-                  }
-                  }
+                  }}
                 />
                 <S5ClaimedAnything
                   claimedAnything={this.state.postData.claimedAnything}
                   howMany={this.state.postData.howMany}
                   onChange={(value, value1) => {
-                    if(value == "Yes"){
+                    if (value == "Yes") {
                       this.handleChangeClaims(value);
-                    }
-                     
-                   else  if (value1 !== "") {
+                    } else if (value1 !== "") {
                       this.handleChangeHowMany(value1);
                     }
                   }}
@@ -463,7 +632,7 @@ class App extends Component {
                   }}
                 />
                 <S10Personalnfo
-               callMediaAlpha={this.callMediaAlpha}
+                  callMediaAlpha={this.callMediaAlpha}
                   city={this.state.postData.city}
                   Credit={this.state.postData.Credit}
                   onChange={(e, value1) => {
@@ -475,8 +644,8 @@ class App extends Component {
                   }}
                   object={this.state.postData}
                 />
-                <S11Final postData2={this.state.postData}/>
-              </StepWizard>
+                <S11Final postData2={this.state.postData} />
+              </StepWizard>*/}
             </div>
           </div>
         </div>
