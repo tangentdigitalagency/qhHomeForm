@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Form, Select, Button } from "antd";
+import { Form, Select, Button, Progress } from "antd";
 import CommonComponents from "./CommonComponents";
 import BootstrapSwitchButton from "bootstrap-switch-button-react";
 import { Link } from "react-router-dom";
@@ -37,6 +37,8 @@ class S5ClaimedAnything extends Component {
   render() {
     return (
       <div className="card shadow-lg" style={{ borderRadius: "25px" }}>
+                        <Progress percent={45} status="active" showInfo={true} className="pbar" />
+
         <Link to="/step4">
           <CommonComponents
             currentStep={this.props.currentStep}
