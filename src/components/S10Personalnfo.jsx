@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Form, Input, Select, Butto, Progress } from "antd";
+import { Form, Input, Select, Button, Progress } from "antd";
 import CommonComponents from "./CommonComponents";
 import { Link } from "react-router-dom";
 
