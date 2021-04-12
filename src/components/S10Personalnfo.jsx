@@ -133,7 +133,7 @@ class S10Personalnfo extends Component {
                 </p>
               </Form.Item>
               <Form.Item>
-                <Link to="/step11">
+                <Link to="/thank-you-home">
                   <Button
                     type="primary"
                     htmlType="submit"
