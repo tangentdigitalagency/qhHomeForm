@@ -26,14 +26,12 @@ class App extends Component {
       //extra entries
       lp_campaign_id: "5fe2370665025",
       lp_campaign_key: "r7zWCbyvMYB4KF2wJq9t",
-      Key: "rRkWg9.WrP.Ahm.Ic9hNr9kZruQMcRpNruwIc9tVxVpWrV4MgexMl8QKHpEE",
-      TYPE: "34",
-      SRC: "quotehoundgooglehomeform",
       //SRC:"test",
-      Landing_Page: "quotehound.com",
+      Landing_Page: "home.quotehound.com",
       IP_Address: "",
-      Sub_ID: 101,
-      Pub_ID: 102,
+      lp_s1: '',
+      lp_s2: 13,
+      User_Agent: navigator.userAgent,
       TCPA_Consent: "Yes",
       state: "NY",
       Occupancy: "Primary Residence",
@@ -124,7 +122,53 @@ class App extends Component {
   };
 
   componentDidUpdate = () => {
-    //console.log(this.state);
+    const queryString = window.location.search;
+		const urlParams = new URLSearchParams(queryString);
+
+		const utmCampaign = urlParams.get('utm_campaign');
+		this.setState({
+			postData: {
+				...this.state.postData,
+				campaign: utmCampaign
+			}
+			
+		})
+
+		const utmMed = urlParams.get('utm_medium');
+
+		if (utmMed == 'adwords'){
+			this.setState({
+				postData: {
+					...this.state.postData,
+					lp_s1: '101'
+				},
+			});
+		}
+		if (utmMed == 'facebook'){
+			this.setState({
+				postData: {
+					...this.state.postData,
+					lp_s1: '103'
+				},
+			});
+		}
+		if (utmMed == 'bing'){
+			this.setState({
+				postData: {
+					...this.state.postData,
+					lp_s1: '108'
+				},
+			});
+		}
+		else{
+			this.setState({
+				postData: {
+					...this.state.postData,
+					lp_s1: '12'
+				},
+			});
+		}
+
   };
 
   // handleChangePossesion = (v) => {
