@@ -121,55 +121,7 @@ class App extends Component {
     window.MediaAlphaExchange__load("target");
   };
 
-  componentDidUpdate = () => {
-    const queryString = window.location.search;
-		const urlParams = new URLSearchParams(queryString);
-
-		const utmCampaign = urlParams.get('utm_campaign');
-		this.setState({
-			postData: {
-				...this.state.postData,
-				campaign: utmCampaign
-			}
-			
-		})
-
-		const utmMed = urlParams.get('utm_medium');
-
-		if (utmMed == 'adwords'){
-			this.setState({
-				postData: {
-					...this.state.postData,
-					lp_s1: '101'
-				},
-			});
-		}
-		if (utmMed == 'facebook'){
-			this.setState({
-				postData: {
-					...this.state.postData,
-					lp_s1: '103'
-				},
-			});
-		}
-		if (utmMed == 'bing'){
-			this.setState({
-				postData: {
-					...this.state.postData,
-					lp_s1: '108'
-				},
-			});
-		}
-		else{
-			this.setState({
-				postData: {
-					...this.state.postData,
-					lp_s1: '12'
-				},
-			});
-		}
-
-  };
+  
 
   // handleChangePossesion = (v) => {
   //   console.log(`Own: ${value}`)
